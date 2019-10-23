@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="493pt" height="544" version="1.1" viewBox="0 0 493 408">
+    <g id="surface9">
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M236.172 14.61c13.098-9.165 25.937-7.637 45.14-.91 21.563-5.759 43.989 7.585 29.887 20.722 18.637 10.879.598 28.746-14.32 25.5 7.793 6.363-14.945 18.586-37.668 7.058-30.66 10.891-40.61 1.239-43.895-8.199-23.527-3.87-7.625-26.125-1.543-29.37-18.277-10.216 7.766-21.727 22.399-14.802zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M178.325 11.405c11.762-5.516 18.468-6.369 35.387-.129M180.009 9.42c6.463-6.946 18.964-4.195 30.404-1.116m0 0c15.689-2.549 33.46 7.605 21.302 16.222M210.738 8.828c13.99-6.288 30.457 3.38 20.013 17.282m0 0c14.344 7.177 1.371 19.531-12.507 20.205m12.976-20.449c12.82 10.28-1.834 19.694-11.549 17.025m0 0c6.492 6.044-13.222 15.858-28.77 6.91m27.824-5.815c6.064 5.274-11.241 14.016-29.868 3.39m0 0c-22.237 8.054-32.54 1.59-32.426-8.22m33.275 6.433c-22.43 11.25-29.86 4.383-32.238-4.655m0 0c-17.018-1.755-7.717-18.732-2.833-21.941m3.592 23.288c-19.134-4.837-5.093-22.696.366-25.65m0 0c-13.333-7.86 4.195-15.389 15.322-12.251M156.92 17.59c-12.172-7.383 7.034-18.55 20.698-9.6m-.363.377c.788-1.854.583.085.729 2.614m-.51-2.766c.449 3.36.827 4.441.743 3.155"/>
+        <path fill="#f99c41" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M202.5 120h117v64h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M150.65 90.381c36.238.287 66.449 1.359 90.235.796m-88.02.329c18.888 1.294 36.39.759 87.184-.771m.637.765c-.71 19.675-2.08 37.201 1.116 46.72m-1.275-47.45c1.005 17.948-1.025 29.585-.547 49.53m-.118.471c-25.391-1.432-51.442-1.755-85.324-.58m85.078-.322c-29.573-1.614-60.472-2.35-88.08-.483m3.136-1.23c-1.359-10.105-2.229-24.291-.063-47.142m-2.688 49.219c-.506-18.185.438-35.552 1.615-47.845"/>
+        <path fill="#ef5ba1" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 264h224c6.668 0 10 3.332 10 10v44c0 6.668-3.332 10-10 10H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M3.334 195.674c45.09 1.638 89.344 2.549 166.057 1.248m-168.498.932c60.566-.807 118.776-2.256 168.569-1.114m-.88 1.723c5.398-1.225 8.108.776 8.125 6m-8.429-6.542c5.625-.528 8.719 1.154 9.279 5.048m-1.152.905c.686 12.19-.143 24.83-.354 31.863m1.998-32.121c-1.23 5.013.378 14.889.533 32.619m-1.052-.858c.492 4.972-2.139 7.907-7.89 8.812m8.072-7.309c1.105 4.705-1.468 6.495-7.717 5.37m-1.717 1.397c-52.08-2.61-106.441-.697-163.02-2.1m163.938-.302c-41.444.61-84.252.589-166.345 1.199m.697.421c-1.802-17.323-1.441-35.473-.665-44.276m-.167 43.275c1.157-15.47-.246-29.91-1.583-45.012"/>
+        <path fill="#ef5ba1" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 264h224c6.668 0 10 3.332 10 10v54h-234zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M208.02 195.478c40.637-.387 80.584-1.655 164.378-.724m-167.3 1.04c67.697 3.39 133.028 3.474 168.88.228m-.059-.603c4.391 1.031 7.049 4.295 7.977 9.797m-8.147-10.102c4.275 1.114 6.48 4.665 6.615 10.652m-1.693-.412c1.872 4.717 1.573 15.175 3.761 38.897m-1.125-37.605c-.017 17.252-1.464 31.186-1.257 40.327M379 244.342c-45.472-.384-94.506 3.015-174.175 2.68m174.565-1.661c-65.62.95-131.941 1.34-174.598.12m.618-.442c-1.392-8.941-2.036-18.618.475-46.72m-.768 48.044c.065-13.53 1.688-27.07 1.746-49.734"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 328h117v64H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M1.588 244.348c20.036-1.465 41.766-1.723 87.407 2.622m-86.748-.695c19.468-.445 36.184-.993 88.128-1.21m-.953-1.244c3.332 12.97.514 20.145-.11 48.512m1.23-47.607c.416 11.335-.09 23.382-1.25 48.74m-.173.256c-20.576-1.723-43.724-.947-86.151-.513m87.685-.073c-35.094.255-67.145-.422-86.287-.021m-1.796 1.726c-.042-19.406 1.816-38.35-1.213-50.97m1.995 49.684c-.235-11.722 1.207-22.275-1.764-47.631"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M121.5 328h107c6.668 0 10 3.332 10 10v54h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M91.93 245.839c27.329-3.02 53.922-3.624 80.11-3.164m-80.112 1.547c20.821-1.813 43.708-1.464 81.012-1.083m-.252 1.312c5.528-.83 8.259 1.277 8.191 6.323m-9.618-8.113c6.445 1.16 9.457 3.556 9.038 7.183m.67-.867c-.19 16.113-2.045 32.558-2.294 41.38m2.312-41.172c-1.963 12.95-1.436 27.281-1.544 41.104m.944.569c-21.753 1.2-41.397.878-88.023 1.206m88.867-1.675c-25.615 1.01-50.046-.414-87.707.022m-.641 1.106c.621-13.539.427-29.83 1.626-49.24m-1.802 47.959c.571-16.556-.405-34.805.648-46.286"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 328h117v64h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M206.699 245.053c17.592 2.693 35.062 3.724 86.613 3.414m-87.624-.437c31.707-3.853 61.869-3.826 86.346-1.42m2.453 1.824c-2.004 11.412-3.197 24.87-.493 44.85m-.964-45.45c.05 13.476.56 29.763.214 46.254m.09 2.663c-28.35-4.014-61.17-3.446-88.027-3.685m87.486 1.537c-18.088-2.384-37.295-1.127-86.584-.58m.84-.753c.29-12.952-.178-27.108-.656-47.812m-.86 49.031c-1.77-9.638-1.834-20.232-1.23-48.436"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M391.5 328h117v64h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M291.07 246.334c28.413 5.323 52.005 1.48 88.544.533m-87.65 1.916c24.161-3.047 50.71-4.075 88.014-.39m-.08-1.406c.575 8.69-2.296 19.747-1.07 50.945m-.09-50.643c1.732 19.01.542 37.725.238 48.815m-1.17-1.63c-32.689.505-62.735-.57-86.603 1.879m88.88-.742c-25.573.762-52.101-.357-89.198.349m.713-.524c1.552-9.185 1.82-19.474.521-46.802m-.157 46.986c.858-11.408-.215-23.066-1.287-46.564"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 392h234v32h-117v32h-107c-6.668 0-10-3.332-10-10zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M3.691 296.001c48.091-.003 97.644.074 175.012-1.304M2.92 294.71c41.417 3.667 79.568 2.485 176.944 1.297m-.858.75c-.267 7.176.94 17.304-1.242 24.13m1.703-25.41c-.933 7.255-.356 16.304.054 23.784m-1.62-.645c-22.426 1.435-47.46.97-88.464 1.052m90.659.13c-27.873-.721-56.672-.698-87.718-.649m.328.527c-.401 6.64-.694 10.858-2.546 25.416m1.448-24.826c-1.002 6.383-.206 13.799.609 22.09m-1.362.415c-22.89-.307-47.066-1.535-78.76.648m80.084-.378c-18.208.833-38.016.126-81.8-.018m-.349.935c-3.412-1.292-5.27-3.826-5.575-7.605m6.396 6.486c-3.956-.536-6.167-3.404-6.633-8.604m1.975-2.09c-1.152-11.311-2.453-25.245-.865-38.697m-.846 40.359c-1.286-15.197-.378-29.461-1.245-37.51"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 392h234v32h-117v32h-107c-6.668 0-10-3.332-10-10zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M203.44 296.622c37.252-.612 74.461-2.982 178.436-2.593m-178.108 1.893c61.661 2.223 121.34 2.965 176.588.228m-.4-.372c1.178 3.059-2.211 8.355 2.029 24.545m-2.169-24.105c-.058 1.971-.77 7.713.519 23.396m1.201-1.682c-30.378 6.692-58.438 5.643-91.093 1.422m88.717 1.382c-27.176.873-55.4 1.506-86.938-.419m-1.225 1.416c1.324 6.858.24 14.765 1.623 24.096m-.761-26.874c.934 3.557-.66 8.63.052 25.781m.703-.038c-22.494-.525-47.174-3.328-79.919-1.834m79.427.346c-29.44.835-61.866.568-79.93 1.526m-.177-1.869c-5.156.193-8.015-1.975-8.578-6.501m8.625 6.405c-4.657 1.663-6.662-.97-6.009-7.899m-1.63-.867c2.222-7.143.877-15.455 1.38-39m-.567 40.453c1.198-8.9.364-17.933-1.565-39.639m-109 18.885c33.805 1.667 69.219 5.326 85.637 1.497m-86.763.471c19.77-1.356 39.155-.269 86.432-.726m2.004 2.666c-2.816 4.512-2.406 11.382.817 21.571m-2.27-23.05c.03 6.536-.296 14.173-.373 23.754m.114-.218c-35.021-1.142-69.512-1.083-85.89 1.718m85.307-1.509c-23.367 1.31-45.582 1.306-87.673-1.102m.272 2.03c1.763-6.627 1.067-15.333-.138-25.365m.601 23.701c.369-9.656-.026-18.99-.583-24.108"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M295.837 316.697c31.869-.088 61.224-.458 84.524-.306m-86.522 1.125c25.893-5.03 52.143-3.726 87.645-.718m-.842 1.178c.78 4.606 1.401 12.75 2.84 21.657m-.888-22.576c-.17 8.498.181 17.856.082 24.31m.843.08c-29.51-.73-62.267-.253-90.928 1.669m89.926-1.95c-26.525-1.284-50.651-3.133-88.215-.654m1.634-.956c-.837-5.636-2.323-13.72-.114-20.434m-1.717 21.427c.095-10.414-.79-18.714 1.208-23.71M90.33 187.853c-1.5-11.93.577-21.504-.506-26.55m.178 24.059c-.853-7.075.87-13.151.387-22.851m-1.951-1.744c42.568-4.001 84.138-3.606 204.618-.199m-202.491 2.106c79.01-.876 157.652-1.508 202.5-1.25m-1.688-.539c1.585 10.657 1.919 16.84 1.922 25.83m-.539-24.565c.682 9.51-.578 18.393.709 24.961M193.037 54.532c1.559 11.008-.41 17.523 1.808 26.363m-.642-26.342c-.076 7.27.1 12.888-1.969 23.945"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M192.12 138.266c-1.113 12.161 2.863 19.24.21 24.12m.93-24.157c-.217 10.692.443 18.252-.252 23.92"/>
+    </g>
+    <defs xmlns="http://www.w3.org/2000/svg">
+        <filter id="dsFilterNoBlur" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feBlend in="SourceGraphic" in2="matrixOut" mode="normal"/>
+        </filter>
+        <filter id="dsFilter" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feGaussianBlur in="matrixOut" result="blurOut" stdDeviation="3"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+        </filter>
+        <marker id="iPointer-ez8dkn0adxd" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M10 0v10L0 5z"/>
+        </marker>
+        <marker id="Pointer-ez8dkn0adxd" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M0 0l10 5-10 5z"/>
+        </marker>
+    </defs>
+    <defs>
+        <style type="text/css">
+            @font-face{font-family:&quot;xkcd Script&quot;;src:url(./xkcd-script.ttf)}
+        </style>
+    </defs>
+    <g xmlns="http://www.w3.org/2000/svg" id="lines-ez8dkn0adxd" fill="none" stroke="#000" stroke-width="2" transform="scale(.75)">
+        <g id="group503">
+            <path id="path503" marker-end="url(#Pointer-ez8dkn0adxd)" marker-start="url(#iPointer-ez8dkn0adxd)" d="M121.5 248v-32h270v32"/>
+        </g>
+        <g id="group1002">
+            <path id="path1002" marker-end="url(#Pointer-ez8dkn0adxd)" d="M256.5 72v32"/>
+        </g>
+        <g id="group1010">
+            <path id="path1010" d="M256.5 184v32"/>
+        </g>
+    </g>
+    <text id="text0" x="161.325" y="33.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Users
+    </text>
+    <text id="text1" x="161.325" y="117.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Service
+    </text>
+    <text id="text5" x="12.825" y="225.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Pod
+    </text>
+    <text id="text6" x="215.325" y="225.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Pod
+    </text>
+    <text id="text9" x="12.825" y="273.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Container
+    </text>
+    <text id="text10" x="100.575" y="273.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Container
+    </text>
+    <text id="text11" x="215.325" y="273.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Container
+    </text>
+    <text id="text12" x="303.075" y="273.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Container
+    </text>
+    <text id="text15" x="12.825" y="321.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Host
+    </text>
+    <text id="text17" x="12.825" y="333.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        [zone=a]
+    </text>
+    <text id="text16" x="215.325" y="321.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Host
+    </text>
+    <text id="text20" x="215.325" y="333.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        [zone=b]
+    </text>
+    <text id="text18" x="114.075" y="333.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        kernel
+    </text>
+    <text id="text21" x="316.575" y="333.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        kernel
+    </text>
+    <text id="text2" x="249.075" y="117.6" fill="#000" font-family="xkcd Script" font-size="15">
+        service.namespace.svc.cluster.local
+    </text>
+    <text id="text3" x="188.325" y="189.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text4" x="188.325" y="213.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text7" x="188.325" y="237.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text8" x="188.325" y="261.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text13" x="188.325" y="285.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text14" x="188.325" y="309.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text19" x="188.325" y="333.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text22" x="188.325" y="357.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text23" x="-.675" y="369.6" fill="#000" font-family="xkcd Script" font-size="15">
+        Availability zone a
+    </text>
+    <text id="text24" x="201.825" y="369.6" fill="#000" font-family="xkcd Script" font-size="15">
+        Availability zone b
+    </text>
+    <text id="text25" x="188.325" y="381.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+</svg>

@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <title>Kubernetes Past and Future</title>
+
+    <meta name="description" content="Kubernetes Past and Future" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="assets/3rdparty/reveal.js/css/reveal.css" />
+    <link rel="stylesheet" href="assets/3rdparty/reveal.js/css/theme/simple.css" id="theme" />
+
+    <link rel="stylesheet" href="assets/markdeck/styles/zenburn.css" />
+
+            <link rel="stylesheet" type="text/css" href="assets/3rdparty/asciinema-player.css" />
+        <link rel="stylesheet" href="assets/markdeck/css/markdeck.revealjs.css" />
+    <link rel="stylesheet" href="assets/css/slides.css" />
+
+    <script>
+        window.pdf_render = window.location.search.match(/render=pdf/gi) != null;
+        if (window.pdf_render) {
+            document.write('<link rel="stylesheet" href="assets/css/render-pdf.css" type="text/css">');
+        }
+    </script>
+
+    <link href="assets/css/rerendering.css" rel="stylesheet"></link>
+
+
+</head>
+<body>
+
+
+    <div class="rerendering-message"><h1>R E R E N D E R I N G</h1></div>
+    <div class="markdeck-logo"><a href="https://github.com/arnehilmann/markdeck">powered by markdeck</a></div>
+
+    <div class="reveal">
+        <div class="slides">
+
+<p><link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"></p>
+<section id="kubernetes-past-and-future" class="level1 light-on-dark" data-bgcss="tw-colorful" data-state="tw-colorful">
+<h1>KUBERNETES PAST AND FUTURE</h1>
+</section>
+<section id="what-does-kubernetes-do" class="level1 light-on-dark" data-bgcss="tw-bg-purple" data-state="tw-bg-purple">
+<h1>WHAT DOES KUBERNETES DO?</h1>
+</section>
+<section id="distributed-deployment" class="level1" data-bgcss="tw-bg-extra-light-blue" data-state="tw-bg-extra-light-blue">
+<h1>DISTRIBUTED DEPLOYMENT</h1>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="493pt" height="528" version="1.1" viewBox="0 0 493 396">
+    <g id="surface5">
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M236.172 14.61c13.098-9.165 25.937-7.637 45.14-.91 21.563-5.759 43.989 7.585 29.887 20.722 18.637 10.879.598 28.746-14.32 25.5 7.793 6.363-14.945 18.586-37.668 7.058-30.66 10.891-40.61 1.239-43.895-8.199-23.527-3.87-7.625-26.125-1.543-29.37-18.277-10.216 7.766-21.727 22.399-14.802zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M178.325 11.405c11.762-5.516 18.468-6.369 35.387-.129M180.009 9.42c6.463-6.946 18.964-4.195 30.404-1.116m0 0c15.689-2.549 33.46 7.605 21.302 16.222M210.738 8.828c13.99-6.288 30.457 3.38 20.013 17.282m0 0c14.344 7.177 1.371 19.531-12.507 20.205m12.976-20.449c12.82 10.28-1.834 19.694-11.549 17.025m0 0c6.492 6.044-13.222 15.858-28.77 6.91m27.824-5.815c6.064 5.274-11.241 14.016-29.868 3.39m0 0c-22.237 8.054-32.54 1.59-32.426-8.22m33.275 6.433c-22.43 11.25-29.86 4.383-32.238-4.655m0 0c-17.018-1.755-7.717-18.732-2.833-21.941m3.592 23.288c-19.134-4.837-5.093-22.696.366-25.65m0 0c-13.333-7.86 4.195-15.389 15.322-12.251M156.92 17.59c-12.172-7.383 7.034-18.55 20.698-9.6m-.363.377c.788-1.854.583.085.729 2.614m-.51-2.766c.449 3.36.827 4.441.743 3.155"/>
+        <path fill="#f99c41" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M202.5 120h117v64h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M150.65 90.381c36.238.287 66.449 1.359 90.235.796m-88.02.329c18.888 1.294 36.39.759 87.184-.771m.637.765c-.71 19.675-2.08 37.201 1.116 46.72m-1.275-47.45c1.005 17.948-1.025 29.585-.547 49.53m-.118.471c-25.391-1.432-51.442-1.755-85.324-.58m85.078-.322c-29.573-1.614-60.472-2.35-88.08-.483m3.136-1.23c-1.359-10.105-2.229-24.291-.063-47.142m-2.688 49.219c-.506-18.185.438-35.552 1.615-47.845"/>
+        <path fill="#ef5ba1" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 264h224c6.668 0 10 3.332 10 10v44c0 6.668-3.332 10-10 10H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M3.334 195.674c45.09 1.638 89.344 2.549 166.057 1.248m-168.498.932c60.566-.807 118.776-2.256 168.569-1.114m-.88 1.723c5.398-1.225 8.108.776 8.125 6m-8.429-6.542c5.625-.528 8.719 1.154 9.279 5.048m-1.152.905c.686 12.19-.143 24.83-.354 31.863m1.998-32.121c-1.23 5.013.378 14.889.533 32.619m-1.052-.858c.492 4.972-2.139 7.907-7.89 8.812m8.072-7.309c1.105 4.705-1.468 6.495-7.717 5.37m-1.717 1.397c-52.08-2.61-106.441-.697-163.02-2.1m163.938-.302c-41.444.61-84.252.589-166.345 1.199m.697.421c-1.802-17.323-1.441-35.473-.665-44.276m-.167 43.275c1.157-15.47-.246-29.91-1.583-45.012"/>
+        <path fill="#ef5ba1" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 264h224c6.668 0 10 3.332 10 10v54h-234zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M208.02 195.478c40.637-.387 80.584-1.655 164.378-.724m-167.3 1.04c67.697 3.39 133.028 3.474 168.88.228m-.059-.603c4.391 1.031 7.049 4.295 7.977 9.797m-8.147-10.102c4.275 1.114 6.48 4.665 6.615 10.652m-1.693-.412c1.872 4.717 1.573 15.175 3.761 38.897m-1.125-37.605c-.017 17.252-1.464 31.186-1.257 40.327M379 244.342c-45.472-.384-94.506 3.015-174.175 2.68m174.565-1.661c-65.62.95-131.941 1.34-174.598.12m.618-.442c-1.392-8.941-2.036-18.618.475-46.72m-.768 48.044c.065-13.53 1.688-27.07 1.746-49.734"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 328h117v64H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M1.588 244.348c20.036-1.465 41.766-1.723 87.407 2.622m-86.748-.695c19.468-.445 36.184-.993 88.128-1.21m-.953-1.244c3.332 12.97.514 20.145-.11 48.512m1.23-47.607c.416 11.335-.09 23.382-1.25 48.74m-.173.256c-20.576-1.723-43.724-.947-86.151-.513m87.685-.073c-35.094.255-67.145-.422-86.287-.021m-1.796 1.726c-.042-19.406 1.816-38.35-1.213-50.97m1.995 49.684c-.235-11.722 1.207-22.275-1.764-47.631"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M121.5 328h107c6.668 0 10 3.332 10 10v54h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M91.93 245.839c27.329-3.02 53.922-3.624 80.11-3.164m-80.112 1.547c20.821-1.813 43.708-1.464 81.012-1.083m-.252 1.312c5.528-.83 8.259 1.277 8.191 6.323m-9.618-8.113c6.445 1.16 9.457 3.556 9.038 7.183m.67-.867c-.19 16.113-2.045 32.558-2.294 41.38m2.312-41.172c-1.963 12.95-1.436 27.281-1.544 41.104m.944.569c-21.753 1.2-41.397.878-88.023 1.206m88.867-1.675c-25.615 1.01-50.046-.414-87.707.022m-.641 1.106c.621-13.539.427-29.83 1.626-49.24m-1.802 47.959c.571-16.556-.405-34.805.648-46.286"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 328h117v64h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M206.699 245.053c17.592 2.693 35.062 3.724 86.613 3.414m-87.624-.437c31.707-3.853 61.869-3.826 86.346-1.42m2.453 1.824c-2.004 11.412-3.197 24.87-.493 44.85m-.964-45.45c.05 13.476.56 29.763.214 46.254m.09 2.663c-28.35-4.014-61.17-3.446-88.027-3.685m87.486 1.537c-18.088-2.384-37.295-1.127-86.584-.58m.84-.753c.29-12.952-.178-27.108-.656-47.812m-.86 49.031c-1.77-9.638-1.834-20.232-1.23-48.436"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M391.5 328h117v64h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M291.07 246.334c28.413 5.323 52.005 1.48 88.544.533m-87.65 1.916c24.161-3.047 50.71-4.075 88.014-.39m-.08-1.406c.575 8.69-2.296 19.747-1.07 50.945m-.09-50.643c1.732 19.01.542 37.725.238 48.815m-1.17-1.63c-32.689.505-62.735-.57-86.603 1.879m88.88-.742c-25.573.762-52.101-.357-89.198.349m.713-.524c1.552-9.185 1.82-19.474.521-46.802m-.157 46.986c.858-11.408-.215-23.066-1.287-46.564"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 392h234v32h-117v32h-107c-6.668 0-10-3.332-10-10zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M3.691 296.001c48.091-.003 97.644.074 175.012-1.304M2.92 294.71c41.417 3.667 79.568 2.485 176.944 1.297m-.858.75c-.267 7.176.94 17.304-1.242 24.13m1.703-25.41c-.933 7.255-.356 16.304.054 23.784m-1.62-.645c-22.426 1.435-47.46.97-88.464 1.052m90.659.13c-27.873-.721-56.672-.698-87.718-.649m.328.527c-.401 6.64-.694 10.858-2.546 25.416m1.448-24.826c-1.002 6.383-.206 13.799.609 22.09m-1.362.415c-22.89-.307-47.066-1.535-78.76.648m80.084-.378c-18.208.833-38.016.126-81.8-.018m-.349.935c-3.412-1.292-5.27-3.826-5.575-7.605m6.396 6.486c-3.956-.536-6.167-3.404-6.633-8.604m1.975-2.09c-1.152-11.311-2.453-25.245-.865-38.697m-.846 40.359c-1.286-15.197-.378-29.461-1.245-37.51"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 392h234v32h-117v32h-107c-6.668 0-10-3.332-10-10zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M203.44 296.622c37.252-.612 74.461-2.982 178.436-2.593m-178.108 1.893c61.661 2.223 121.34 2.965 176.588.228m-.4-.372c1.178 3.059-2.211 8.355 2.029 24.545m-2.169-24.105c-.058 1.971-.77 7.713.519 23.396m1.201-1.682c-30.378 6.692-58.438 5.643-91.093 1.422m88.717 1.382c-27.176.873-55.4 1.506-86.938-.419m-1.225 1.416c1.324 6.858.24 14.765 1.623 24.096m-.761-26.874c.934 3.557-.66 8.63.052 25.781m.703-.038c-22.494-.525-47.174-3.328-79.919-1.834m79.427.346c-29.44.835-61.866.568-79.93 1.526m-.177-1.869c-5.156.193-8.015-1.975-8.578-6.501m8.625 6.405c-4.657 1.663-6.662-.97-6.009-7.899m-1.63-.867c2.222-7.143.877-15.455 1.38-39m-.567 40.453c1.198-8.9.364-17.933-1.565-39.639m-109 18.885c33.805 1.667 69.219 5.326 85.637 1.497m-86.763.471c19.77-1.356 39.155-.269 86.432-.726m2.004 2.666c-2.816 4.512-2.406 11.382.817 21.571m-2.27-23.05c.03 6.536-.296 14.173-.373 23.754m.114-.218c-35.021-1.142-69.512-1.083-85.89 1.718m85.307-1.509c-23.367 1.31-45.582 1.306-87.673-1.102m.272 2.03c1.763-6.627 1.067-15.333-.138-25.365m.601 23.701c.369-9.656-.026-18.99-.583-24.108"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M295.837 316.697c31.869-.088 61.224-.458 84.524-.306m-86.522 1.125c25.893-5.03 52.143-3.726 87.645-.718m-.842 1.178c.78 4.606 1.401 12.75 2.84 21.657m-.888-22.576c-.17 8.498.181 17.856.082 24.31m.843.08c-29.51-.73-62.267-.253-90.928 1.669m89.926-1.95c-26.525-1.284-50.651-3.133-88.215-.654m1.634-.956c-.837-5.636-2.323-13.72-.114-20.434m-1.717 21.427c.095-10.414-.79-18.714 1.208-23.71M90.33 187.853c-1.5-11.93.577-21.504-.506-26.55m.178 24.059c-.853-7.075.87-13.151.387-22.851m-1.951-1.744c42.568-4.001 84.138-3.606 204.618-.199m-202.491 2.106c79.01-.876 157.652-1.508 202.5-1.25m-1.688-.539c1.585 10.657 1.919 16.84 1.922 25.83m-.539-24.565c.682 9.51-.578 18.393.709 24.961M193.037 54.532c1.559 11.008-.41 17.523 1.808 26.363m-.642-26.342c-.076 7.27.1 12.888-1.969 23.945"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M192.12 138.266c-1.113 12.161 2.863 19.24.21 24.12m.93-24.157c-.217 10.692.443 18.252-.252 23.92"/>
+    </g>
+    <defs xmlns="http://www.w3.org/2000/svg">
+        <filter id="dsFilterNoBlur" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feBlend in="SourceGraphic" in2="matrixOut" mode="normal"/>
+        </filter>
+        <filter id="dsFilter" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feGaussianBlur in="matrixOut" result="blurOut" stdDeviation="3"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+        </filter>
+        <marker id="iPointer-ez8dkn0adxd" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M10 0v10L0 5z"/>
+        </marker>
+        <marker id="Pointer-ez8dkn0adxd" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M0 0l10 5-10 5z"/>
+        </marker>
+    </defs>
+    <defs>
+        <style type="text/css">
+            @font-face{font-family:&quot;xkcd Script&quot;;src:url(./xkcd-script.ttf)}
+        </style>
+    </defs>
+    <g xmlns="http://www.w3.org/2000/svg" id="lines-ez8dkn0adxd" fill="none" stroke="#000" stroke-width="2" transform="scale(.75)">
+        <g id="group490">
+            <path id="path490" marker-end="url(#Pointer-ez8dkn0adxd)" marker-start="url(#iPointer-ez8dkn0adxd)" d="M121.5 248v-32h270v32"/>
+        </g>
+        <g id="group974">
+            <path id="path974" marker-end="url(#Pointer-ez8dkn0adxd)" d="M256.5 72v32"/>
+        </g>
+        <g id="group982">
+            <path id="path982" d="M256.5 184v32"/>
+        </g>
+    </g>
+    <text id="text0" x="161.325" y="33.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Users
+    </text>
+    <text id="text1" x="161.325" y="117.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Service
+    </text>
+    <text id="text3" x="12.825" y="225.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Pod
+    </text>
+    <text id="text4" x="215.325" y="225.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Pod
+    </text>
+    <text id="text5" x="12.825" y="273.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Container
+    </text>
+    <text id="text6" x="100.575" y="273.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Container
+    </text>
+    <text id="text7" x="215.325" y="273.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Container
+    </text>
+    <text id="text8" x="303.075" y="273.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Container
+    </text>
+    <text id="text9" x="12.825" y="321.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Host
+    </text>
+    <text id="text10" x="215.325" y="321.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Host
+    </text>
+    <text id="text11" x="114.075" y="333.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        kernel
+    </text>
+    <text id="text12" x="316.575" y="333.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        kernel
+    </text>
+    <text id="text2" x="249.075" y="117.6" fill="#000" font-family="xkcd Script" font-size="15">
+        service.namespace.svc.cluster.local
+    </text>
+</svg>
+</p>
+</section>
+<section id="highly-available-deployment" class="level1" data-bgcss="tw-bg-extra-light-blue" data-state="tw-bg-extra-light-blue">
+<h1>HIGHLY AVAILABLE DEPLOYMENT</h1>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="493pt" height="544" version="1.1" viewBox="0 0 493 408">
+    <g id="surface9">
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M236.172 14.61c13.098-9.165 25.937-7.637 45.14-.91 21.563-5.759 43.989 7.585 29.887 20.722 18.637 10.879.598 28.746-14.32 25.5 7.793 6.363-14.945 18.586-37.668 7.058-30.66 10.891-40.61 1.239-43.895-8.199-23.527-3.87-7.625-26.125-1.543-29.37-18.277-10.216 7.766-21.727 22.399-14.802zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M178.325 11.405c11.762-5.516 18.468-6.369 35.387-.129M180.009 9.42c6.463-6.946 18.964-4.195 30.404-1.116m0 0c15.689-2.549 33.46 7.605 21.302 16.222M210.738 8.828c13.99-6.288 30.457 3.38 20.013 17.282m0 0c14.344 7.177 1.371 19.531-12.507 20.205m12.976-20.449c12.82 10.28-1.834 19.694-11.549 17.025m0 0c6.492 6.044-13.222 15.858-28.77 6.91m27.824-5.815c6.064 5.274-11.241 14.016-29.868 3.39m0 0c-22.237 8.054-32.54 1.59-32.426-8.22m33.275 6.433c-22.43 11.25-29.86 4.383-32.238-4.655m0 0c-17.018-1.755-7.717-18.732-2.833-21.941m3.592 23.288c-19.134-4.837-5.093-22.696.366-25.65m0 0c-13.333-7.86 4.195-15.389 15.322-12.251M156.92 17.59c-12.172-7.383 7.034-18.55 20.698-9.6m-.363.377c.788-1.854.583.085.729 2.614m-.51-2.766c.449 3.36.827 4.441.743 3.155"/>
+        <path fill="#f99c41" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M202.5 120h117v64h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M150.65 90.381c36.238.287 66.449 1.359 90.235.796m-88.02.329c18.888 1.294 36.39.759 87.184-.771m.637.765c-.71 19.675-2.08 37.201 1.116 46.72m-1.275-47.45c1.005 17.948-1.025 29.585-.547 49.53m-.118.471c-25.391-1.432-51.442-1.755-85.324-.58m85.078-.322c-29.573-1.614-60.472-2.35-88.08-.483m3.136-1.23c-1.359-10.105-2.229-24.291-.063-47.142m-2.688 49.219c-.506-18.185.438-35.552 1.615-47.845"/>
+        <path fill="#ef5ba1" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 264h224c6.668 0 10 3.332 10 10v44c0 6.668-3.332 10-10 10H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M3.334 195.674c45.09 1.638 89.344 2.549 166.057 1.248m-168.498.932c60.566-.807 118.776-2.256 168.569-1.114m-.88 1.723c5.398-1.225 8.108.776 8.125 6m-8.429-6.542c5.625-.528 8.719 1.154 9.279 5.048m-1.152.905c.686 12.19-.143 24.83-.354 31.863m1.998-32.121c-1.23 5.013.378 14.889.533 32.619m-1.052-.858c.492 4.972-2.139 7.907-7.89 8.812m8.072-7.309c1.105 4.705-1.468 6.495-7.717 5.37m-1.717 1.397c-52.08-2.61-106.441-.697-163.02-2.1m163.938-.302c-41.444.61-84.252.589-166.345 1.199m.697.421c-1.802-17.323-1.441-35.473-.665-44.276m-.167 43.275c1.157-15.47-.246-29.91-1.583-45.012"/>
+        <path fill="#ef5ba1" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 264h224c6.668 0 10 3.332 10 10v54h-234zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M208.02 195.478c40.637-.387 80.584-1.655 164.378-.724m-167.3 1.04c67.697 3.39 133.028 3.474 168.88.228m-.059-.603c4.391 1.031 7.049 4.295 7.977 9.797m-8.147-10.102c4.275 1.114 6.48 4.665 6.615 10.652m-1.693-.412c1.872 4.717 1.573 15.175 3.761 38.897m-1.125-37.605c-.017 17.252-1.464 31.186-1.257 40.327M379 244.342c-45.472-.384-94.506 3.015-174.175 2.68m174.565-1.661c-65.62.95-131.941 1.34-174.598.12m.618-.442c-1.392-8.941-2.036-18.618.475-46.72m-.768 48.044c.065-13.53 1.688-27.07 1.746-49.734"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 328h117v64H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M1.588 244.348c20.036-1.465 41.766-1.723 87.407 2.622m-86.748-.695c19.468-.445 36.184-.993 88.128-1.21m-.953-1.244c3.332 12.97.514 20.145-.11 48.512m1.23-47.607c.416 11.335-.09 23.382-1.25 48.74m-.173.256c-20.576-1.723-43.724-.947-86.151-.513m87.685-.073c-35.094.255-67.145-.422-86.287-.021m-1.796 1.726c-.042-19.406 1.816-38.35-1.213-50.97m1.995 49.684c-.235-11.722 1.207-22.275-1.764-47.631"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M121.5 328h107c6.668 0 10 3.332 10 10v54h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M91.93 245.839c27.329-3.02 53.922-3.624 80.11-3.164m-80.112 1.547c20.821-1.813 43.708-1.464 81.012-1.083m-.252 1.312c5.528-.83 8.259 1.277 8.191 6.323m-9.618-8.113c6.445 1.16 9.457 3.556 9.038 7.183m.67-.867c-.19 16.113-2.045 32.558-2.294 41.38m2.312-41.172c-1.963 12.95-1.436 27.281-1.544 41.104m.944.569c-21.753 1.2-41.397.878-88.023 1.206m88.867-1.675c-25.615 1.01-50.046-.414-87.707.022m-.641 1.106c.621-13.539.427-29.83 1.626-49.24m-1.802 47.959c.571-16.556-.405-34.805.648-46.286"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 328h117v64h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M206.699 245.053c17.592 2.693 35.062 3.724 86.613 3.414m-87.624-.437c31.707-3.853 61.869-3.826 86.346-1.42m2.453 1.824c-2.004 11.412-3.197 24.87-.493 44.85m-.964-45.45c.05 13.476.56 29.763.214 46.254m.09 2.663c-28.35-4.014-61.17-3.446-88.027-3.685m87.486 1.537c-18.088-2.384-37.295-1.127-86.584-.58m.84-.753c.29-12.952-.178-27.108-.656-47.812m-.86 49.031c-1.77-9.638-1.834-20.232-1.23-48.436"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M391.5 328h117v64h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M291.07 246.334c28.413 5.323 52.005 1.48 88.544.533m-87.65 1.916c24.161-3.047 50.71-4.075 88.014-.39m-.08-1.406c.575 8.69-2.296 19.747-1.07 50.945m-.09-50.643c1.732 19.01.542 37.725.238 48.815m-1.17-1.63c-32.689.505-62.735-.57-86.603 1.879m88.88-.742c-25.573.762-52.101-.357-89.198.349m.713-.524c1.552-9.185 1.82-19.474.521-46.802m-.157 46.986c.858-11.408-.215-23.066-1.287-46.564"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 392h234v32h-117v32h-107c-6.668 0-10-3.332-10-10zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M3.691 296.001c48.091-.003 97.644.074 175.012-1.304M2.92 294.71c41.417 3.667 79.568 2.485 176.944 1.297m-.858.75c-.267 7.176.94 17.304-1.242 24.13m1.703-25.41c-.933 7.255-.356 16.304.054 23.784m-1.62-.645c-22.426 1.435-47.46.97-88.464 1.052m90.659.13c-27.873-.721-56.672-.698-87.718-.649m.328.527c-.401 6.64-.694 10.858-2.546 25.416m1.448-24.826c-1.002 6.383-.206 13.799.609 22.09m-1.362.415c-22.89-.307-47.066-1.535-78.76.648m80.084-.378c-18.208.833-38.016.126-81.8-.018m-.349.935c-3.412-1.292-5.27-3.826-5.575-7.605m6.396 6.486c-3.956-.536-6.167-3.404-6.633-8.604m1.975-2.09c-1.152-11.311-2.453-25.245-.865-38.697m-.846 40.359c-1.286-15.197-.378-29.461-1.245-37.51"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 392h234v32h-117v32h-107c-6.668 0-10-3.332-10-10zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M203.44 296.622c37.252-.612 74.461-2.982 178.436-2.593m-178.108 1.893c61.661 2.223 121.34 2.965 176.588.228m-.4-.372c1.178 3.059-2.211 8.355 2.029 24.545m-2.169-24.105c-.058 1.971-.77 7.713.519 23.396m1.201-1.682c-30.378 6.692-58.438 5.643-91.093 1.422m88.717 1.382c-27.176.873-55.4 1.506-86.938-.419m-1.225 1.416c1.324 6.858.24 14.765 1.623 24.096m-.761-26.874c.934 3.557-.66 8.63.052 25.781m.703-.038c-22.494-.525-47.174-3.328-79.919-1.834m79.427.346c-29.44.835-61.866.568-79.93 1.526m-.177-1.869c-5.156.193-8.015-1.975-8.578-6.501m8.625 6.405c-4.657 1.663-6.662-.97-6.009-7.899m-1.63-.867c2.222-7.143.877-15.455 1.38-39m-.567 40.453c1.198-8.9.364-17.933-1.565-39.639m-109 18.885c33.805 1.667 69.219 5.326 85.637 1.497m-86.763.471c19.77-1.356 39.155-.269 86.432-.726m2.004 2.666c-2.816 4.512-2.406 11.382.817 21.571m-2.27-23.05c.03 6.536-.296 14.173-.373 23.754m.114-.218c-35.021-1.142-69.512-1.083-85.89 1.718m85.307-1.509c-23.367 1.31-45.582 1.306-87.673-1.102m.272 2.03c1.763-6.627 1.067-15.333-.138-25.365m.601 23.701c.369-9.656-.026-18.99-.583-24.108"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M295.837 316.697c31.869-.088 61.224-.458 84.524-.306m-86.522 1.125c25.893-5.03 52.143-3.726 87.645-.718m-.842 1.178c.78 4.606 1.401 12.75 2.84 21.657m-.888-22.576c-.17 8.498.181 17.856.082 24.31m.843.08c-29.51-.73-62.267-.253-90.928 1.669m89.926-1.95c-26.525-1.284-50.651-3.133-88.215-.654m1.634-.956c-.837-5.636-2.323-13.72-.114-20.434m-1.717 21.427c.095-10.414-.79-18.714 1.208-23.71M90.33 187.853c-1.5-11.93.577-21.504-.506-26.55m.178 24.059c-.853-7.075.87-13.151.387-22.851m-1.951-1.744c42.568-4.001 84.138-3.606 204.618-.199m-202.491 2.106c79.01-.876 157.652-1.508 202.5-1.25m-1.688-.539c1.585 10.657 1.919 16.84 1.922 25.83m-.539-24.565c.682 9.51-.578 18.393.709 24.961M193.037 54.532c1.559 11.008-.41 17.523 1.808 26.363m-.642-26.342c-.076 7.27.1 12.888-1.969 23.945"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M192.12 138.266c-1.113 12.161 2.863 19.24.21 24.12m.93-24.157c-.217 10.692.443 18.252-.252 23.92"/>
+    </g>
+    <defs xmlns="http://www.w3.org/2000/svg">
+        <filter id="dsFilterNoBlur" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feBlend in="SourceGraphic" in2="matrixOut" mode="normal"/>
+        </filter>
+        <filter id="dsFilter" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feGaussianBlur in="matrixOut" result="blurOut" stdDeviation="3"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+        </filter>
+        <marker id="iPointer-ez8dkn0adxd" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M10 0v10L0 5z"/>
+        </marker>
+        <marker id="Pointer-ez8dkn0adxd" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M0 0l10 5-10 5z"/>
+        </marker>
+    </defs>
+    <defs>
+        <style type="text/css">
+            @font-face{font-family:&quot;xkcd Script&quot;;src:url(./xkcd-script.ttf)}
+        </style>
+    </defs>
+    <g xmlns="http://www.w3.org/2000/svg" id="lines-ez8dkn0adxd" fill="none" stroke="#000" stroke-width="2" transform="scale(.75)">
+        <g id="group503">
+            <path id="path503" marker-end="url(#Pointer-ez8dkn0adxd)" marker-start="url(#iPointer-ez8dkn0adxd)" d="M121.5 248v-32h270v32"/>
+        </g>
+        <g id="group1002">
+            <path id="path1002" marker-end="url(#Pointer-ez8dkn0adxd)" d="M256.5 72v32"/>
+        </g>
+        <g id="group1010">
+            <path id="path1010" d="M256.5 184v32"/>
+        </g>
+    </g>
+    <text id="text0" x="161.325" y="33.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Users
+    </text>
+    <text id="text1" x="161.325" y="117.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Service
+    </text>
+    <text id="text5" x="12.825" y="225.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Pod
+    </text>
+    <text id="text6" x="215.325" y="225.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Pod
+    </text>
+    <text id="text9" x="12.825" y="273.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Container
+    </text>
+    <text id="text10" x="100.575" y="273.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Container
+    </text>
+    <text id="text11" x="215.325" y="273.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Container
+    </text>
+    <text id="text12" x="303.075" y="273.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Container
+    </text>
+    <text id="text15" x="12.825" y="321.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Host
+    </text>
+    <text id="text17" x="12.825" y="333.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        [zone=a]
+    </text>
+    <text id="text16" x="215.325" y="321.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Host
+    </text>
+    <text id="text20" x="215.325" y="333.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        [zone=b]
+    </text>
+    <text id="text18" x="114.075" y="333.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        kernel
+    </text>
+    <text id="text21" x="316.575" y="333.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        kernel
+    </text>
+    <text id="text2" x="249.075" y="117.6" fill="#000" font-family="xkcd Script" font-size="15">
+        service.namespace.svc.cluster.local
+    </text>
+    <text id="text3" x="188.325" y="189.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text4" x="188.325" y="213.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text7" x="188.325" y="237.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text8" x="188.325" y="261.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text13" x="188.325" y="285.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text14" x="188.325" y="309.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text19" x="188.325" y="333.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text22" x="188.325" y="357.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text23" x="-.675" y="369.6" fill="#000" font-family="xkcd Script" font-size="15">
+        Availability zone a
+    </text>
+    <text id="text24" x="201.825" y="369.6" fill="#000" font-family="xkcd Script" font-size="15">
+        Availability zone b
+    </text>
+    <text id="text25" x="188.325" y="381.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+</svg>
+</p>
+</section>
+<section id="isolated-deployment" class="level1" data-bgcss="tw-bg-yellow" data-state="tw-bg-yellow">
+<h1>ISOLATED DEPLOYMENT</h1>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="468" height="336" version="1.1" viewBox="0 0 351 252">
+    <g id="surface13">
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M236.172 30.61c13.098-9.165 25.937-7.637 45.14-.91 21.563-5.759 43.989 7.585 29.887 20.722 18.637 10.879.598 28.746-14.32 25.5 7.793 6.363-14.945 18.586-37.668 7.058-30.66 10.891-40.61 1.239-43.895-8.199-23.527-3.87-7.625-26.125-1.543-29.37-18.277-10.216 7.766-21.727 22.399-14.802zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M178.325 23.405c11.762-5.516 18.468-6.369 35.387-.129m-33.703-1.857c6.463-6.946 18.964-4.195 30.404-1.116m0 0c15.689-2.549 33.46 7.605 21.302 16.222m-20.977-15.697c13.99-6.288 30.457 3.38 20.013 17.282m0 0c14.344 7.177 1.371 19.531-12.507 20.205m12.976-20.449c12.82 10.28-1.834 19.694-11.549 17.025m0 0c6.492 6.043-13.222 15.858-28.77 6.91m27.824-5.815c6.064 5.274-11.241 14.016-29.868 3.39m0 0c-22.237 8.053-32.54 1.59-32.426-8.22m33.275 6.433c-22.43 11.25-29.86 4.383-32.238-4.656m0 0c-17.018-1.755-7.717-18.732-2.833-21.94m3.592 23.288c-19.134-4.837-5.093-22.696.366-25.65m0 0c-13.333-7.86 4.195-15.389 15.322-12.251M156.92 29.59c-12.172-7.383 7.034-18.55 20.698-9.6m-.363.377c.788-1.854.583.085.729 2.614m-.51-2.766c.449 3.36.827 4.441.743 3.155"/>
+        <path fill="#ef5ba1" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M67.5 168h117v64h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M49.4 126.381c36.238-.181 66.449.89 90.235.796m-88.02.329c18.888.724 36.39.188 87.184-.771m.636.765c-.708 18.835-2.08 36.358 1.116 46.72m-1.274-47.45c1.005 16.612-1.025 28.251-.547 49.53m-.118.471c-25.391-1.113-51.443-1.432-85.324-.58m85.078-.322c-29.573-.199-60.472-.934-88.08-.483m3.136-1.23c-1.359-10.138-2.229-24.323-.063-47.142m-2.687 49.219c-.507-18.876.437-36.244 1.614-47.845"/>
+        <path fill="#f99c41" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M337.5 168h117v64h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M253.084 123.673c23.095.622 45.349 1.53 85.807 1.25m-88.248.93c32.324-1.763 62.289-3.213 88.319-1.113m-.038-.483c.108 7.543 1.734 19.5-1.404 48.363m2.072-48.006c.556 17.2.292 31.046.214 47.822m-2.212 1.736c-22.38-3.198-50.549.018-84.653 1.067m86.01-1.488c-27.68-2.613-56.717-1.652-87.458-1.184m1.345 2.318c-3.185-18.17-1.734-39.44-2.414-49.031m.627 47.8c-.102-21.715 1.166-39.832.84-48.902m-161.645-9.747c-1.31-9.03-.366-19.503.938-23.215m-1.77 22.213c1.565-9.237.695-16.679.02-23.95m-.676-.77c65.282-1.973 126.011.4 202.72 1.215m-201.882.363c44.883 2.734 91.555 3.771 202.45-.03m-1.116.18c3.448 4.731 2.27 13.183.26 22.222m.58-23.447c-.324 9.668.381 20.057.745 24.706"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M195.047 69.955c.545 4.84-.12 6.843-.58 21.49m-1.078-24.059c-.762 9.568-.575 18.114 1.207 24.661"/>
+    </g>
+    <defs xmlns="http://www.w3.org/2000/svg">
+        <filter id="dsFilterNoBlur" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feBlend in="SourceGraphic" in2="matrixOut" mode="normal"/>
+        </filter>
+        <filter id="dsFilter" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feGaussianBlur in="matrixOut" result="blurOut" stdDeviation="3"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+        </filter>
+        <marker id="iPointer-oh9n3hj557s" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M10 0v10L0 5z"/>
+        </marker>
+        <marker id="Pointer-oh9n3hj557s" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M0 0l10 5-10 5z"/>
+        </marker>
+    </defs>
+    <defs>
+        <style type="text/css">
+            @font-face{font-family:&quot;xkcd Script&quot;;src:url(./xkcd-script.ttf)}
+        </style>
+    </defs>
+    <g xmlns="http://www.w3.org/2000/svg" id="lines-oh9n3hj557s" fill="none" stroke="#000" stroke-width="2" transform="scale(.75)">
+        <g id="group300">
+            <path id="path300" marker-end="url(#Pointer-oh9n3hj557s)" marker-start="url(#iPointer-oh9n3hj557s)" d="M121.5 152v-32h270v32"/>
+        </g>
+        <g id="group611">
+            <path id="path611" d="M256.5 88v32"/>
+        </g>
+    </g>
+    <text id="text0" x="161.325" y="45.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Users
+    </text>
+    <text id="text3" x="60.075" y="153.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Service a
+    </text>
+    <text id="text4" x="262.575" y="153.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Service b
+    </text>
+    <text id="text1" x="188.325" y="117.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text2" x="188.325" y="141.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text5" x="188.325" y="165.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text6" x="188.325" y="189.6" fill="#000" font-family="xkcd Script" font-size="15">
+        |
+    </text>
+    <text id="text7" x="141.075" y="213.6" fill="#000" font-family="xkcd Script" font-size="15">
+        Network policy
+    </text>
+    <text id="text8" x="141.075" y="225.6" fill="#000" font-family="xkcd Script" font-size="15">
+        (layer 3)
+    </text>
+</svg>
+</p>
+</section>
+<section id="zero-trust-deployment" class="level1" data-bgcss="tw-bg-yellow" data-state="tw-bg-yellow">
+<h1>ZERO TRUST DEPLOYMENT</h1>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="568" height="320" version="1.1" viewBox="0 0 426 240">
+    <g id="surface17">
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M236.172 30.61c13.098-9.165 25.937-7.637 45.14-.91 21.563-5.759 43.989 7.585 29.887 20.722 18.637 10.879.598 28.746-14.32 25.5 7.793 6.363-14.945 18.586-37.668 7.058-30.66 10.891-40.61 1.239-43.895-8.199-23.527-3.87-7.625-26.125-1.543-29.37-18.277-10.216 7.766-21.727 22.399-14.802zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M178.325 23.405c11.762-5.516 18.468-6.369 35.387-.129m-33.703-1.857c6.463-6.946 18.964-4.195 30.404-1.116m0 0c15.689-2.549 33.46 7.605 21.302 16.222m-20.977-15.697c13.99-6.288 30.457 3.38 20.013 17.282m0 0c14.344 7.177 1.371 19.531-12.507 20.205m12.976-20.449c12.82 10.28-1.834 19.694-11.549 17.025m0 0c6.492 6.043-13.222 15.858-28.77 6.91m27.824-5.815c6.064 5.274-11.241 14.016-29.868 3.39m0 0c-22.237 8.053-32.54 1.59-32.426-8.22m33.275 6.433c-22.43 11.25-29.86 4.383-32.238-4.656m0 0c-17.018-1.755-7.717-18.732-2.833-21.94m3.592 23.288c-19.134-4.837-5.093-22.696.366-25.65m0 0c-13.333-7.86 4.195-15.389 15.322-12.251M156.92 29.59c-12.172-7.383 7.034-18.55 20.698-9.6m-.363.377c.788-1.854.583.085.729 2.614m-.51-2.766c.449 3.36.827 4.441.743 3.155"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M393.293 27.934v36.855c-.004 1.68-.477 3.582 3.36 3.445h39.367c4.054 4.547-18.864 3.032-23.918 3.11-.38 11.457 11.707 15.242 31.421 14.86 20.02.417 33.192-3.266 32.34-14.755-4.437.114-29.273 1.188-25.765-3.386h44.527c2.95-.024 3.738-1 3.508-2.434V28.465c-.047-1.09-1.828-2.54-4.742-2.813H397.18c-2.22.032-4.032.383-3.887 2.282zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M293.745 21.33c3.117 10.87.547 22.267 2.488 28.44m-.273-27.314c.982 7.363.22 12.577-.563 26.869m.285.673c1.245 1.611-.267 2.686 3.714 1.474m-3.088-2.848c-2.115 1.958-.27 6.533 3.159 5.79m1.966-2.031c6.351 5.762 18.61 6.166 28.177 1.555m-29.936-.454c8.034.074 16.571-.392 29.945-.117m-.624 1.046c3.633 5.37-14.177 2.766-19.38 3.26m17.282-3.301c5.198 6.065-13.614 3.203-17.03 2.303m0 0c-1.415 10.615 8.388 12.829 24.393 10.983m-22.343-9.957c-3.623 5.56 7.8 8.976 19.853 12.178m0 0c13.414-.498 24.351-1.96 26.161-9.103M330.87 71.441c17.347-2.742 28.363-4.488 23.265-11.877m0 0c-3.944-.76-23.719 2.223-19.59-1.451m20.709 3.083c-5.233-2.667-25.403 1.749-21.334-5.757m-.879-1.527c10.236-.465 16.348-1.321 34.213 2.839m-32.88-1.675c11.674-3.235 23.953-3.209 32.824-.112m.117.475c3.194 1.28 1.594-2.27 2.033-3.504m-.029 4.919c.156-2.588-.012-.756 3.194-2.573m.928-.061c-1.954-9.323-.234-22.348.384-31.175m-1.939 30.686c.65-6.36-.032-14.948.152-31.916m.475-.466c.896-1.65-.639-2.777-5.16-4.12m4.108 4.509c2.32-.99.448-3.847-.815-3.313m1.108 1.4c-21.074-6.307-43.694-6.73-74.036.12m72.287-1.857c-14.97-1.77-31.242-1.664-72.068 1.348m.554-1.011c-.287-1.075-2.915-1.315-3.908 2.517m2.191-.525c-2.2-3.665-.14-.811-2.396.9m-.103-.015c.25.26.976.278 1.491 1.028m-1.465-.996c.282 3.762.578 3.979 1.357 1.052"/>
+        <path fill="#ef5ba1" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M67.5 168h117v64h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M51.51 126.17c32.103.068 64.213.05 87.847-.987m-89.098.73c29.628.914 58.605 2.422 87.225.846m2.44-.569c-1.072 17.397-3.488 37.975-3.245 48.548m.855-48.178c1.383 11.039.062 22.898.422 46.755m-.222-.519c-29.985 2.534-62.219 1.104-89.327 3.102m89.411-2.068c-19.119-.55-37.834.027-87.765-.37m-.799 2.465c-.575-11.106 3.023-23.76 3.301-47.675m-1.921 45.767c-.812-12.093.483-25.89-.844-46.84"/>
+        <path fill="#f99c41" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M337.5 168h117v64h-117zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M252.979 127.078c20.267-3.451 39.79-3.87 89.065-2.786m-88.12 1.222c31.8.038 65.136 1.125 87.546-.061m2.499.811c.05 12.987-2.25 23.991-1.705 48.967m.685-50.936c.196 11.56.557 23.18-.594 49.409m-1.973-2.423c-25.1-.539-50.34-1.807-87.823 3.803m90.22-2.985c-19.051 2.698-38.24 3.017-87.504.882m-1.69-1.114c.073-6.03-.083-14.79 1.312-24.448m-.41 24.914c-.538-5.315.003-12.422.387-23.775m-2.17 1.234c2.305-4.09 2.085-10.558 2.293-25.532m-1.33 24.058c.955-8.91.252-17.49 1.348-23.847m-165.8-12.085c.267-6.05.047-11.915-.653-21.006m1.629 22.052c-2.043-7.298-.15-15.334-1.319-23.092m.589-.724c48.685 3.85 96.161 5.033 203.587 1.485M88.5 90.651c70.986 3.902 142.371 2.771 203.736-.695m-.383-.946c1.08 7.731 2.106 16.468 1.474 22.693m-1.351-21.84c.45 11.651-1.151 19.31.337 24.817M145.6 147.953c23.938-2.253 49.385-1.032 101.757.022m-101.786.953c23.434 1.01 46.95 2.148 102.532-.926M194.262 63.8c.035 11.977 1.142 17.772-1.916 25.635m1.204-25.052c.19 5.387.873 12.615.747 25.573"/>
+    </g>
+    <defs xmlns="http://www.w3.org/2000/svg">
+        <filter id="dsFilterNoBlur" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feBlend in="SourceGraphic" in2="matrixOut" mode="normal"/>
+        </filter>
+        <filter id="dsFilter" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feGaussianBlur in="matrixOut" result="blurOut" stdDeviation="3"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+        </filter>
+        <marker id="iPointer-z9g7bazgsrl" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M10 0v10L0 5z"/>
+        </marker>
+        <marker id="Pointer-z9g7bazgsrl" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M0 0l10 5-10 5z"/>
+        </marker>
+    </defs>
+    <defs>
+        <style type="text/css">
+            @font-face{font-family:&quot;xkcd Script&quot;;src:url(./xkcd-script.ttf)}
+        </style>
+    </defs>
+    <g xmlns="http://www.w3.org/2000/svg" id="lines-z9g7bazgsrl" fill="none" stroke="#000" stroke-width="2" transform="scale(.75)">
+        <g id="group293">
+            <path id="path293" marker-end="url(#Pointer-z9g7bazgsrl)" marker-start="url(#iPointer-z9g7bazgsrl)" d="M121.5 152v-32h270v32"/>
+        </g>
+        <g id="group456">
+            <path id="path456" marker-end="url(#Pointer-z9g7bazgsrl)" marker-start="url(#iPointer-z9g7bazgsrl)" d="M193.5 200h135"/>
+        </g>
+        <g id="group589">
+            <path id="path589" d="M256.5 88v32"/>
+        </g>
+    </g>
+    <text id="text0" x="161.325" y="45.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Users
+    </text>
+    <text id="text4" x="303.075" y="45.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Dashboard
+    </text>
+    <text id="text5" x="60.075" y="153.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Service a
+    </text>
+    <text id="text6" x="262.575" y="153.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Service b
+    </text>
+    <text id="text1" x="249.075" y="45.6" fill="#000" font-family="xkcd Script" font-size="15">
+        -
+    </text>
+    <text id="text2" x="262.575" y="45.6" fill="#000" font-family="xkcd Script" font-size="15">
+        -
+    </text>
+    <text id="text3" x="276.075" y="45.6" fill="#000" font-family="xkcd Script" font-size="15">
+        -
+    </text>
+    <text id="text7" x="154.575" y="165.6" fill="#000" font-family="xkcd Script" font-size="15">
+        mutual TLS
+    </text>
+    <text id="text8" x="154.575" y="201.6" fill="#000" font-family="xkcd Script" font-size="15">
+        Service mesh
+    </text>
+    <text id="text9" x="154.575" y="213.6" fill="#000" font-family="xkcd Script" font-size="15">
+        (layer 7)
+    </text>
+</svg>
+</p>
+</section>
+<section id="the-competitive-environment" class="level1 light-on-dark" data-bgcss="tw-bg-purple" data-state="tw-bg-purple">
+<h1>THE COMPETITIVE ENVIRONMENT</h1>
+</section>
+<section id="all-happy-families" class="level1" data-bgcss="tw-bg-extra-light-blue" data-state="tw-bg-extra-light-blue">
+<h1>ALL HAPPY FAMILIES</h1>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="439pt" height="272" version="1.1" viewBox="0 0 439 204">
+    <g id="surface37">
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M167.688 31.137C231.16-.933 293.37 4.41 386.445 27.949c104.489-20.152 213.168 26.555 144.832 72.52 90.301 38.086 2.887 100.613-69.398 89.254 37.762 22.273-72.422 65.054-182.55 24.703-148.587 38.12-196.798 4.336-212.724-28.688-114.003-13.554-36.945-91.437-7.464-102.8C-29.43 47.18 96.773 6.894 167.688 31.136zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M126.96 23.8C175.31.657 219.046 2.665 291.367 21.518m-162.724.293c43.052-24.571 92.582-18.957 159.425-3.266m0 0C365.952 5.2 448.413 40.374 395.578 73.614M288.39 19.066C364.576 1.984 445.735 36.673 394.614 75.2m0 0c68.095 27.58 3.089 73.433-53.816 68.022m54.285-68.265c66.568 30.682-.114 73.593-52.857 64.84m0 0c28.971 17.976-56.333 50.71-137.432 20.144m136.485-19.049c28.544 17.207-54.352 48.868-138.53 16.624m0 0c-110.68 28.476-149.68 3.913-159.044-23.59m159.897 21.802c-110.877 31.673-147 6.707-158.863-20.021m0 0c-79.664-5.42-24.492-64.12-2.063-73.415m2.825 74.76c-81.782-8.503-21.87-68.08 1.137-77.121m0 0c-68.339-24.745 24.313-53.854 77.647-37.732m-79.319 38.69c-67.18-24.267 27.15-57.018 83.022-35.078m-.234.243c.026-2.868-.642-3.137-1.017-2.527m1.157 2.43c-.202 1.012-.421.397-1.005-2.179"/>
+    </g>
+    <defs xmlns="http://www.w3.org/2000/svg">
+        <filter id="dsFilterNoBlur" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feBlend in="SourceGraphic" in2="matrixOut" mode="normal"/>
+        </filter>
+        <filter id="dsFilter" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feGaussianBlur in="matrixOut" result="blurOut" stdDeviation="3"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+        </filter>
+        <marker id="iPointer-o38u4z1bal" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M10 0v10L0 5z"/>
+        </marker>
+        <marker id="Pointer-o38u4z1bal" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M0 0l10 5-10 5z"/>
+        </marker>
+    </defs>
+    <defs>
+        <style type="text/css">
+            @font-face{font-family:&quot;xkcd Script&quot;;src:url(./xkcd-script.ttf)}
+        </style>
+    </defs>
+    ??
+    <text id="text0" x="201.825" y="33.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Fleet
+    </text>
+    <text id="text1" x="80.325" y="45.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Docker Swarm
+    </text>
+    <text id="text2" x="228.825" y="57.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        OpenShift (1-2)
+    </text>
+    <text id="text3" x="154.575" y="69.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Kubernetes
+    </text>
+    <text id="text4" x="39.825" y="81.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Apache Mesos
+    </text>
+    <text id="text5" x="201.825" y="93.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Elastic Container Service
+    </text>
+    <text id="text6" x="87.075" y="105.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Heroku
+    </text>
+    <text id="text7" x="141.075" y="117.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Cloud Foundry
+    </text>
+    <text id="text8" x="242.325" y="129.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Panamax
+    </text>
+    <text id="text9" x="73.575" y="141.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Shipyard
+    </text>
+    <text id="text10" x="269.325" y="153.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Portainer
+    </text>
+</svg>
+</p>
+<aside class="notes" data-markdown>
+This position (there are platforms for end users and others for platform builders) is absolutely fine in a vibrant ecosystem of container schedulers. There’s no doubt developers love Docker Swarm, for example.
+</aside>
+</section>
+<section id="splendid-isolation" class="level1" data-bgcss="tw-bg-extra-light-blue" data-state="tw-bg-extra-light-blue">
+<h1>SPLENDID ISOLATION</h1>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="439pt" height="272" version="1.1" viewBox="0 0 439 204">
+    <g id="surface37">
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M167.688 31.137C231.16-.933 293.37 4.41 386.445 27.949c104.489-20.152 213.168 26.555 144.832 72.52 90.301 38.086 2.887 100.613-69.398 89.254 37.762 22.273-72.422 65.054-182.55 24.703-148.587 38.12-196.798 4.336-212.724-28.688-114.003-13.554-36.945-91.437-7.464-102.8C-29.43 47.18 96.773 6.894 167.688 31.136zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M126.96 23.8C175.31.657 219.046 2.665 291.367 21.518m-162.724.293c43.052-24.571 92.582-18.957 159.425-3.266m0 0C365.952 5.2 448.413 40.374 395.578 73.614M288.39 19.066C364.576 1.984 445.735 36.673 394.614 75.2m0 0c68.095 27.58 3.089 73.433-53.816 68.022m54.285-68.265c66.568 30.682-.114 73.593-52.857 64.84m0 0c28.971 17.976-56.333 50.71-137.432 20.144m136.485-19.049c28.544 17.207-54.352 48.868-138.53 16.624m0 0c-110.68 28.476-149.68 3.913-159.044-23.59m159.897 21.802c-110.877 31.673-147 6.707-158.863-20.021m0 0c-79.664-5.42-24.492-64.12-2.063-73.415m2.825 74.76c-81.782-8.503-21.87-68.08 1.137-77.121m0 0c-68.339-24.745 24.313-53.854 77.647-37.732m-79.319 38.69c-67.18-24.267 27.15-57.018 83.022-35.078m-.234.243c.026-2.868-.642-3.137-1.017-2.527m1.157 2.43c-.202 1.012-.421.397-1.005-2.179"/>
+    </g>
+    <defs xmlns="http://www.w3.org/2000/svg">
+        <filter id="dsFilterNoBlur" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feBlend in="SourceGraphic" in2="matrixOut" mode="normal"/>
+        </filter>
+        <filter id="dsFilter" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feGaussianBlur in="matrixOut" result="blurOut" stdDeviation="3"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+        </filter>
+        <marker id="iPointer-o38u4z1bal" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M10 0v10L0 5z"/>
+        </marker>
+        <marker id="Pointer-o38u4z1bal" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M0 0l10 5-10 5z"/>
+        </marker>
+    </defs>
+    <defs>
+        <style type="text/css">
+            @font-face{font-family:&quot;xkcd Script&quot;;src:url(./xkcd-script.ttf)}
+        </style>
+    </defs>
+    ??
+    <text id="text0" x="154.575" y="69.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Kubernetes
+    </text>
+</svg>
+</p>
+<aside class="notes" data-markdown>
+However, that is not the ecosystem we have today. It seems odd to let Kubernetes displace all contenders only to say that it’s for platform builders only.
+</aside>
+</section>
+<section id="the-horcrux-advantage" class="level1 light-on-dark" data-bgcss="tw-bg-purple" data-state="tw-bg-purple">
+<h1>THE HORCRUX ADVANTAGE</h1>
+</section>
+<section id="vendor-sharding" class="level1" data-bgcss="tw-bg-extra-light-blue" data-state="tw-bg-extra-light-blue">
+<h1>VENDOR SHARDING</h1>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="446pt" height="432" version="1.1" viewBox="0 0 446 324">
+    <g id="surface33">
+        <path fill="#ef5ba1" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 8h234v96H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M5.926 5.464c63.443 4.995 127.539 1.895 172.208-.36M4.014 6.788c39.203.108 78.565.181 176.218-.08m-1.319-2.027c.6 14.12 3.108 32.162.173 74.69m.847-73.86c.087 16.036-.363 29.088-.12 73.742m2.173-1.752c-59.296-1.151-119.516.32-177.334.161m175.8.727c-62.298.34-121.703-.882-176.465-.061m.72-1.56c-1.317-23.147.166-51.255.725-69.562m-2.35 71.005c.408-26.736-.45-52.828 1.677-71.865"/>
+        <path fill="#f99c41" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 8h234v96h-234zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M206.212 6.794c37.684 4.245 74.318 5.894 171.583-1.776M203.241 6.381c41.107 2.127 79.269 2.985 177.012 1.52m.835.888c1.075 15.911-.712 34.919.064 71.66m-1.921-72.782c-.08 9.035.457 25.055.397 70.274m.314 2.775c-68.886-.765-138.72-1.62-177.044-.612m176.892-1.199c-43.087-.21-86.247 1.21-176.139-.27m-.68 2.297c2.292-27.105-.755-49.356 3.056-74.337m-1.101 71.895c-.243-24.868-.405-46.674-.29-71.075"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M94.5 136h315v96h-315zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M74.08 99.873c53.212-.855 107.355.292 234.234.076m-235.778-.126c93.378 2.549 188.104 2.238 236.862.592m-2.63.345c1.253 15.965 4.359 29.5.794 70.6m.055-71.156c.897 25.582 1.35 49.257.624 72.246m1.462.571c-63.686-2.677-130.573-2.593-238.477-2.979m236.681 1.424c-93.571.642-185.935-.607-236.068.407m-.867.937c-.159-26.314-.988-51.732-.355-73.14m1.998 72.88c-.812-20.558.797-37.436.533-72.379"/>
+        <path fill="#27bdce" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 264h234v96H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M2.34 197.233c49.146 1.104 94.2 3.015 176.972.286m-175.278-.58c62.297-2.463 126.876-.97 174.449-.325m-1.658 1.395c1.626 16.248 1.584 32.82 2.399 72.421m-.083-73.977c.048 20.04-.813 40.104.393 72.958m-1.473 1.184c-46.11-1.773-90.191-2.833-175.357-1.398m175.576.888c-39.808-.638-78.489-1.59-174.85-1.814m.889-.999c-3.264-12.996-1.199-30.706-.098-70.242m-.535 73.017c-1.038-19.137-.399-38.728-.929-72.059"/>
+        <path fill="#00aa5b" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 264h234v96h-234zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M202.82 197.906c41.402-4.327 80.308-2.915 179.26-1.603M205.457 199.2c61.029 3.163 120.621 3.015 174.243-.173m-1.052-2.632c2.737 18.856 2.192 42.15 1.325 74.681m-.935-73.66c.964 28.982 1.236 56.689.902 72.12m.615-.443c-41.976 2.554-83.443 4.386-176.159 3.073m175.87-1.749c-49.002.164-95.98.319-174.891.062m-2.927-1.21c1.515-20.306.938-39.733 1.691-72.943m1.233 74.817c-1.937-19.755-.662-38.493-1.313-73.786"/>
+    </g>
+    <defs xmlns="http://www.w3.org/2000/svg">
+        <filter id="dsFilterNoBlur" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feBlend in="SourceGraphic" in2="matrixOut" mode="normal"/>
+        </filter>
+        <filter id="dsFilter" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feGaussianBlur in="matrixOut" result="blurOut" stdDeviation="3"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+        </filter>
+        <marker id="iPointer-k64m7uwe8a" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M10 0v10L0 5z"/>
+        </marker>
+        <marker id="Pointer-k64m7uwe8a" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M0 0l10 5-10 5z"/>
+        </marker>
+    </defs>
+    <defs>
+        <style type="text/css">
+            @font-face{font-family:&quot;xkcd Script&quot;;src:url(./xkcd-script.ttf)}
+        </style>
+    </defs>
+    ??
+    <text id="text0" x="46.575" y="45.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Microsoft
+    </text>
+    <text id="text1" x="262.575" y="45.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Red Hat
+    </text>
+    <text id="text2" x="168.075" y="141.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Google
+    </text>
+    <text id="text3" x="60.075" y="237.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        VMware
+    </text>
+    <text id="text4" x="262.575" y="237.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        CoreOS
+    </text>
+    <text id="text5" x="80.325" y="297.6" fill="#000" font-family="xkcd Script" font-size="15">
+        Cloud Native Computing Foundation
+    </text>
+</svg>
+</p>
+</section>
+<section id="pizza-effects-identity" class="level1" data-bgcss="tw-bg-extra-light-blue" data-state="tw-bg-extra-light-blue">
+<h1>PIZZA EFFECTS: IDENTITY</h1>
+<p><?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="186px" preserveAspectRatio="none" style="width:357px;height:186px;" version="1.1" viewBox="0 0 357 186" width="357px" zoomAndPan="magnify"><defs><filter height="300%" id="fnov0xtoxbnf1" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="54" x2="54" y1="38.4359" y2="146.222"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="308.5" x2="308.5" y1="38.4359" y2="146.222"/><rect fill="#FEFECE" filter="url(#fnov0xtoxbnf1)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="15" y="23.1599">Kubernetes</text><rect fill="#FEFECE" filter="url(#fnov0xtoxbnf1)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="8" y="145.222"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="15" y="165.3819">Kubernetes</text><rect fill="#FEFECE" filter="url(#fnov0xtoxbnf1)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="80" x="266.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="273.5" y="23.1599">OpenShift</text><rect fill="#FEFECE" filter="url(#fnov0xtoxbnf1)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="80" x="266.5" y="145.222"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="273.5" y="165.3819">OpenShift</text><polygon fill="#A80036" points="296.5,65.6979,306.5,69.6979,296.5,73.6979,300.5,69.6979" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="54.5" x2="302.5" y1="69.6979" y2="69.6979"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="230" x="61.5" y="64.6559">attribute-based access control (ABAC)</text><polygon fill="#A80036" points="65.5,94.96,55.5,98.96,65.5,102.96,61.5,98.96" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="59.5" x2="307.5" y1="98.96" y2="98.96"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="138" x="71.5" y="93.918">roles and cluster-roles</text><polygon fill="#A80036" points="296.5,124.222,306.5,128.222,296.5,132.222,300.5,128.222" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="54.5" x2="302.5" y1="128.222" y2="128.222"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="203" x="61.5" y="123.18">role-based access control (RBAC)</text><!--
+@startuml
+skinparamlocked backgroundcolor transparent
+skinparamlocked backgroundcolor transparent
+Kubernetes->OpenShift : attribute-based access control (ABAC)
+OpenShift->Kubernetes : roles and cluster-roles
+Kubernetes->OpenShift : role-based access control (RBAC)
+@enduml
+
+PlantUML version 1.2018.10(Sat Aug 25 17:02:59 GMT 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_181-b13
+Operating System: Linux
+OS Version: 4.9.184-linuxkit
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg></p>
+<aside class="notes" data-markdown>
+Since Red Hat embraced Kubernetes for OpenShift 3+, there have been numerous virtuous pizza effects, large and small. RBAC is an example that has worked particularly well.
+</aside>
+</section>
+<section id="pizza-effects-networking" class="level1" data-bgcss="tw-bg-extra-light-blue" data-state="tw-bg-extra-light-blue">
+<h1>PIZZA EFFECTS: NETWORKING</h1>
+<p><?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="215px" preserveAspectRatio="none" style="width:291px;height:215px;" version="1.1" viewBox="0 0 291 215" width="291px" zoomAndPan="magnify"><defs><filter height="300%" id="ft9zcz2h9xi2h" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="54" x2="54" y1="38.4359" y2="175.484"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="242.5" x2="242.5" y1="38.4359" y2="175.484"/><rect fill="#FEFECE" filter="url(#ft9zcz2h9xi2h)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="15" y="23.1599">Kubernetes</text><rect fill="#FEFECE" filter="url(#ft9zcz2h9xi2h)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="8" y="174.484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="15" y="194.6439">Kubernetes</text><rect fill="#FEFECE" filter="url(#ft9zcz2h9xi2h)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="80" x="200.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="207.5" y="23.1599">OpenShift</text><rect fill="#FEFECE" filter="url(#ft9zcz2h9xi2h)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="80" x="200.5" y="174.484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="207.5" y="194.6439">OpenShift</text><polygon fill="#A80036" points="230.5,65.6979,240.5,69.6979,230.5,73.6979,234.5,69.6979" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="54.5" x2="236.5" y1="69.6979" y2="69.6979"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="73" x="61.5" y="64.6559">flat network</text><polygon fill="#A80036" points="65.5,94.96,55.5,98.96,65.5,102.96,61.5,98.96" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="59.5" x2="241.5" y1="98.96" y2="98.96"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="112" x="71.5" y="93.918">multitenant plugin</text><polygon fill="#A80036" points="65.5,124.222,55.5,128.222,65.5,132.222,61.5,128.222" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="59.5" x2="241.5" y1="128.222" y2="128.222"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="164" x="71.5" y="123.18">prototype network policies</text><polygon fill="#A80036" points="230.5,153.484,240.5,157.484,230.5,161.484,234.5,157.484" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="54.5" x2="236.5" y1="157.484" y2="157.484"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="101" x="61.5" y="152.442">network policies</text><!--
+@startuml
+skinparamlocked backgroundcolor transparent
+skinparamlocked backgroundcolor transparent
+Kubernetes->OpenShift : flat network
+OpenShift->Kubernetes : multitenant plugin
+OpenShift->Kubernetes : prototype network policies
+Kubernetes->OpenShift : network policies
+@enduml
+
+PlantUML version 1.2018.10(Sat Aug 25 17:02:59 GMT 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_181-b13
+Operating System: Linux
+OS Version: 4.9.184-linuxkit
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg></p>
+<aside class="notes" data-markdown>
+Network policies have arguably been less successful. The question is whether network policies warrant the considerable amount of complexity when placed alongside Red Hat’s original <code>ovs-multitenant</code> plugin.
+</aside>
+</section>
+<section id="pizza-effects-state" class="level1" data-bgcss="tw-bg-extra-light-blue" data-state="tw-bg-extra-light-blue">
+<h1>PIZZA EFFECTS: STATE</h1>
+<p><?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="303px" preserveAspectRatio="none" style="width:433px;height:303px;" version="1.1" viewBox="0 0 433 303" width="433px" zoomAndPan="magnify"><defs><filter height="300%" id="f627car757v0p" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="54" x2="54" y1="38.4359" y2="263.27"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="249.5" x2="249.5" y1="38.4359" y2="263.27"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="388" x2="388" y1="38.4359" y2="263.27"/><rect fill="#FEFECE" filter="url(#f627car757v0p)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="15" y="23.1599">Kubernetes</text><rect fill="#FEFECE" filter="url(#f627car757v0p)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="8" y="262.27"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="15" y="282.43">Kubernetes</text><rect fill="#FEFECE" filter="url(#f627car757v0p)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="80" x="207.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="214.5" y="23.1599">OpenShift</text><rect fill="#FEFECE" filter="url(#f627car757v0p)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="80" x="207.5" y="262.27"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="214.5" y="282.43">OpenShift</text><rect fill="#FEFECE" filter="url(#f627car757v0p)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="71" x="351" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="57" x="358" y="23.1599">Tectonic</text><rect fill="#FEFECE" filter="url(#f627car757v0p)" height="30.4359" style="stroke: #A80036; stroke-width: 1.5;" width="71" x="351" y="262.27"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="57" x="358" y="282.43">Tectonic</text><polygon fill="#A80036" points="237.5,65.6979,247.5,69.6979,237.5,73.6979,241.5,69.6979" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="54.5" x2="243.5" y1="69.6979" y2="69.6979"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="171" x="61.5" y="64.6559">beware stateful applications</text><polygon fill="#A80036" points="65.5,94.96,55.5,98.96,65.5,102.96,61.5,98.96" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="59.5" x2="248.5" y1="98.96" y2="98.96"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="169" x="71.5" y="93.918">application templates (2015)</text><polygon fill="#A80036" points="376.5,124.222,386.5,128.222,376.5,132.222,380.5,128.222" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="54.5" x2="382.5" y1="128.222" y2="128.222"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="176" x="61.5" y="123.18">stateful applications still hard</text><polygon fill="#A80036" points="65.5,153.484,55.5,157.484,65.5,161.484,61.5,157.484" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="59.5" x2="387.5" y1="157.484" y2="157.484"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="282" x="71.5" y="152.442">etcd operator with third-party resources (2016)</text><polygon fill="#A80036" points="376.5,182.746,386.5,186.746,376.5,190.746,380.5,186.746" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="54.5" x2="382.5" y1="186.746" y2="186.746"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="175" x="61.5" y="181.704">Custom Resource Definitions</text><polygon fill="#A80036" points="65.5,212.008,55.5,216.008,65.5,220.008,61.5,216.008" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="59.5" x2="387.5" y1="216.008" y2="216.008"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="222" x="71.5" y="210.966">Operator Framework and SDK (2018)</text><polygon fill="#A80036" points="260.5,241.27,250.5,245.27,260.5,249.27,256.5,245.27" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="254.5" x2="387.5" y1="245.27" y2="245.27"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="115" x="266.5" y="240.228">merges with (2019)</text><!--
+@startuml
+skinparamlocked backgroundcolor transparent
+skinparamlocked backgroundcolor transparent
+skinparam BoxPadding 10
+Kubernetes->OpenShift : beware stateful applications
+OpenShift->Kubernetes : application templates (2015)
+Kubernetes->Tectonic : stateful applications still hard
+Tectonic->Kubernetes : etcd operator with third-party resources (2016)
+Kubernetes->Tectonic : Custom Resource Definitions
+Tectonic->Kubernetes : Operator Framework and SDK (2018)
+Tectonic->OpenShift : merges with (2019)
+@enduml
+
+PlantUML version 1.2018.10(Sat Aug 25 17:02:59 GMT 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_181-b13
+Operating System: Linux
+OS Version: 4.9.184-linuxkit
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg></p>
+<aside class="notes" data-markdown>
+</aside>
+</section>
+<section id="the-horcrux-dilemma" class="level1 light-on-dark" data-bgcss="tw-bg-purple" data-state="tw-bg-purple">
+<h1>THE HORCRUX DILEMMA</h1>
+</section>
+<section id="compute-1-and-up" class="level1" data-bg="#fff44d" data-background="#fff44d">
+<h1>COMPUTE-1 AND UP</h1>
+<p><svg class="marks" width="556" height="270" viewBox="0 0 556 270" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(80,15)"><g class="mark-group role-frame root"><g transform="translate(0,0)"><path class="background" d="M0.5,0.5h400v200h-400Z" style="fill: none; stroke: #ddd;"></path><g><g class="mark-group role-axis"><g transform="translate(0.5,200.5)"><path class="background" d="M0,0h0v0h0Z" style="pointer-events: none; fill: none;"></path><g><g class="mark-rule role-axis-grid" style="pointer-events: none;"><line transform="translate(20,-200)" x2="0" y2="200" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(50,-200)" x2="0" y2="200" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(80,-200)" x2="0" y2="200" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(110,-200)" x2="0" y2="200" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(140,-200)" x2="0" y2="200" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(170,-200)" x2="0" y2="200" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(200,-200)" x2="0" y2="200" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(230,-200)" x2="0" y2="200" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(260,-200)" x2="0" y2="200" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(290,-200)" x2="0" y2="200" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(320,-200)" x2="0" y2="200" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(350,-200)" x2="0" y2="200" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(380,-200)" x2="0" y2="200" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line></g></g></g></g><g class="mark-group role-axis"><g transform="translate(0.5,0.5)"><path class="background" d="M0,0h0v0h0Z" style="pointer-events: none; fill: none;"></path><g><g class="mark-rule role-axis-grid" style="pointer-events: none;"><line transform="translate(0,200)" x2="400" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,167)" x2="400" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,133)" x2="400" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,100)" x2="400" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,67)" x2="400" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,33)" x2="400" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,0)" x2="400" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line></g></g></g></g><g class="mark-rect role-mark marks"><path d="M10,198.33333333333334h20v1.6666666666666572h-20Z" style="fill: #fe17bf;"></path><path d="M39.97946611909651,198.33333333333334h20v1.6666666666666572h-20Z" style="fill: #fe17bf;"></path><path d="M69.95893223819301,196.66666666666666h20v3.333333333333343h-20Z" style="fill: #fe17bf;"></path><path d="M100.02053388090349,190h20v5h-20Z" style="fill: #fe17bf;"></path><path d="M130,185h20v6.666666666666657h-20Z" style="fill: #fe17bf;"></path><path d="M159.97946611909651,161.66666666666666h20v13.333333333333343h-20Z" style="fill: #fe17bf;"></path><path d="M189.958932238193,146.66666666666666h20v15h-20Z" style="fill: #fe17bf;"></path><path d="M220.0205338809035,131.66666666666669h20v16.66666666666663h-20Z" style="fill: #fe17bf;"></path><path d="M250,115h20v18.333333333333343h-20Z" style="fill: #fe17bf;"></path><path d="M279.9794661190965,100h20v18.33333333333333h-20Z" style="fill: #fe17bf;"></path><path d="M309.95893223819303,70h20v26.666666666666657h-20Z" style="fill: #fe17bf;"></path><path d="M340.0205338809035,50h20v26.666666666666657h-20Z" style="fill: #fe17bf;"></path><path d="M370,18.333333333333343h20v28.333333333333314h-20Z" style="fill: #fe17bf;"></path><path d="M10,200h20v0h-20Z" style="fill: #3364c0;"></path><path d="M39.97946611909651,200h20v0h-20Z" style="fill: #3364c0;"></path><path d="M69.95893223819301,200h20v0h-20Z" style="fill: #3364c0;"></path><path d="M100.02053388090349,200h20v0h-20Z" style="fill: #3364c0;"></path><path d="M130,196.66666666666666h20v0h-20Z" style="fill: #3364c0;"></path><path d="M159.97946611909651,180h20v6.666666666666657h-20Z" style="fill: #3364c0;"></path><path d="M189.958932238193,166.66666666666669h20v9.999999999999972h-20Z" style="fill: #3364c0;"></path><path d="M220.0205338809035,153.33333333333334h20v13.333333333333343h-20Z" style="fill: #3364c0;"></path><path d="M250,140h20v16.666666666666657h-20Z" style="fill: #3364c0;"></path><path d="M279.9794661190965,126.66666666666667h20v19.999999999999986h-20Z" style="fill: #3364c0;"></path><path d="M309.95893223819303,111.66666666666667h20v23.33333333333333h-20Z" style="fill: #3364c0;"></path><path d="M340.0205338809035,96.66666666666666h20v26.66666666666667h-20Z" style="fill: #3364c0;"></path><path d="M370,80h20v30h-20Z" style="fill: #3364c0;"></path><path d="M10,200h20v0h-20Z" style="fill: #27bdce;"></path><path d="M39.97946611909651,200h20v0h-20Z" style="fill: #27bdce;"></path><path d="M69.95893223819301,200h20v0h-20Z" style="fill: #27bdce;"></path><path d="M100.02053388090349,200h20v0h-20Z" style="fill: #27bdce;"></path><path d="M130,196.66666666666666h20v3.333333333333343h-20Z" style="fill: #27bdce;"></path><path d="M159.97946611909651,186.66666666666666h20v13.333333333333343h-20Z" style="fill: #27bdce;"></path><path d="M189.958932238193,176.66666666666666h20v23.333333333333343h-20Z" style="fill: #27bdce;"></path><path d="M220.0205338809035,166.66666666666669h20v33.333333333333314h-20Z" style="fill: #27bdce;"></path><path d="M250,156.66666666666666h20v43.33333333333334h-20Z" style="fill: #27bdce;"></path><path d="M279.9794661190965,146.66666666666666h20v53.33333333333334h-20Z" style="fill: #27bdce;"></path><path d="M309.95893223819303,135h20v65h-20Z" style="fill: #27bdce;"></path><path d="M340.0205338809035,123.33333333333333h20v76.66666666666667h-20Z" style="fill: #27bdce;"></path><path d="M370,110h20v90h-20Z" style="fill: #27bdce;"></path><path d="M69.95893223819301,200h20v0h-20Z" style="fill: #00aa5b;"></path><path d="M100.02053388090349,195h20v5h-20Z" style="fill: #00aa5b;"></path><path d="M130,191.66666666666666h20v5h-20Z" style="fill: #00aa5b;"></path><path d="M159.97946611909651,175h20v5h-20Z" style="fill: #00aa5b;"></path><path d="M189.958932238193,161.66666666666666h20v5.000000000000028h-20Z" style="fill: #00aa5b;"></path><path d="M220.0205338809035,148.33333333333331h20v5.000000000000028h-20Z" style="fill: #00aa5b;"></path><path d="M250,133.33333333333334h20v6.666666666666657h-20Z" style="fill: #00aa5b;"></path><path d="M279.9794661190965,118.33333333333333h20v8.333333333333343h-20Z" style="fill: #00aa5b;"></path><path d="M309.95893223819303,96.66666666666666h20v15.000000000000014h-20Z" style="fill: #00aa5b;"></path><path d="M340.0205338809035,76.66666666666666h20v20h-20Z" style="fill: #00aa5b;"></path><path d="M370,46.66666666666666h20v33.33333333333334h-20Z" style="fill: #00aa5b;"></path></g><g class="mark-group role-legend"><g transform="translate(418,0)"><path class="background" d="M0,0h53v70h-53Z" style="pointer-events: none; fill: none;"></path><g><g class="mark-group role-legend-entry"><g transform="translate(0,16)"><path class="background" d="M0,0h0v0h0Z" style="pointer-events: none; fill: none;"></path><g><g class="mark-group role-scope"><g transform="translate(0,0)"><path class="background" d="M0,0h49v12h-49Z" style="pointer-events: none; fill: none; opacity: 1;"></path><g><g class="mark-symbol role-legend-symbol" style="pointer-events: none;"><path transform="translate(6,6)" d="M-5,-5h10v10h-10Z" style="fill: #fe17bf; stroke-width: 1.5; opacity: 1;"></path></g><g class="mark-text role-legend-label" style="pointer-events: none;"><text text-anchor="start" transform="translate(16,9)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">AMZN</text></g></g></g><g transform="translate(0,14)"><path class="background" d="M0,0h49v12h-49Z" style="pointer-events: none; fill: none; opacity: 1;"></path><g><g class="mark-symbol role-legend-symbol" style="pointer-events: none;"><path transform="translate(6,6)" d="M-5,-5h10v10h-10Z" style="fill: #3364c0; stroke-width: 1.5; opacity: 1;"></path></g><g class="mark-text role-legend-label" style="pointer-events: none;"><text text-anchor="start" transform="translate(16,9)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">GOOG</text></g></g></g><g transform="translate(0,28)"><path class="background" d="M0,0h49v12h-49Z" style="pointer-events: none; fill: none; opacity: 1;"></path><g><g class="mark-symbol role-legend-symbol" style="pointer-events: none;"><path transform="translate(6,6)" d="M-5,-5h10v10h-10Z" style="fill: #27bdce; stroke-width: 1.5; opacity: 1;"></path></g><g class="mark-text role-legend-label" style="pointer-events: none;"><text text-anchor="start" transform="translate(16,9)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">MSFT</text></g></g></g><g transform="translate(0,42)"><path class="background" d="M0,0h49v12h-49Z" style="pointer-events: none; fill: none; opacity: 1;"></path><g><g class="mark-symbol role-legend-symbol" style="pointer-events: none;"><path transform="translate(6,6)" d="M-5,-5h10v10h-10Z" style="fill: #00aa5b; stroke-width: 1.5; opacity: 1;"></path></g><g class="mark-text role-legend-label" style="pointer-events: none;"><text text-anchor="start" transform="translate(16,9)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">BABA</text></g></g></g></g></g></g></g><g class="mark-text role-legend-title" style="pointer-events: none;"><text text-anchor="start" transform="translate(0,9)" style="font-family: sans-serif; font-size: 11px; font-weight: bold; fill: #000; opacity: 1;">symbol</text></g></g></g></g><g class="mark-group role-axis"><g transform="translate(0.5,200.5)"><path class="background" d="M0,0h0v0h0Z" style="pointer-events: none; fill: none;"></path><g><g class="mark-rule role-axis-tick" style="pointer-events: none;"><line transform="translate(20,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(50,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(80,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(110,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(140,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(170,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(200,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(230,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(260,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(290,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(320,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(350,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(380,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line></g><g class="mark-text role-axis-label" style="pointer-events: none;"><text text-anchor="middle" transform="translate(20,21)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">2006</text><text text-anchor="middle" transform="translate(49.97946611909651,21)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 0;">2007</text><text text-anchor="middle" transform="translate(79.95893223819301,21)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">2008</text><text text-anchor="middle" transform="translate(110.02053388090349,21)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 0;">2009</text><text text-anchor="middle" transform="translate(140,21)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">2010</text><text text-anchor="middle" transform="translate(169.97946611909651,21)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 0;">2011</text><text text-anchor="middle" transform="translate(199.958932238193,21)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">2012</text><text text-anchor="middle" transform="translate(230.0205338809035,21)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 0;">2013</text><text text-anchor="middle" transform="translate(260,21)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">2014</text><text text-anchor="middle" transform="translate(289.9794661190965,21)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 0;">2015</text><text text-anchor="middle" transform="translate(319.95893223819303,21)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">2016</text><text text-anchor="middle" transform="translate(350.0205338809035,21)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 0;">2017</text><text text-anchor="middle" transform="translate(380,21)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">2018</text></g><g class="mark-rule role-axis-domain" style="pointer-events: none;"><line transform="translate(0,0)" x2="400" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line></g><g class="mark-text role-axis-title" style="pointer-events: none;"><text text-anchor="middle" transform="translate(200,44)" style="font-family: sans-serif; font-size: 18px; font-weight: bold; fill: #000; opacity: 1;">date (year)</text></g></g></g></g><g class="mark-group role-axis"><g transform="translate(0.5,0.5)"><path class="background" d="M0,0h0v0h0Z" style="pointer-events: none; fill: none;"></path><g><g class="mark-rule role-axis-tick" style="pointer-events: none;"><line transform="translate(0,200)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,167)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,133)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,100)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,67)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,33)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,0)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line></g><g class="mark-text role-axis-label" style="pointer-events: none;"><text text-anchor="end" transform="translate(-7,205)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">0</text><text text-anchor="end" transform="translate(-7,171.66666666666669)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">20</text><text text-anchor="end" transform="translate(-7,138.33333333333334)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">40</text><text text-anchor="end" transform="translate(-7,105)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">60</text><text text-anchor="end" transform="translate(-7,71.66666666666669)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">80</text><text text-anchor="end" transform="translate(-7,38.333333333333314)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">100</text><text text-anchor="end" transform="translate(-7,5)" style="font-family: sans-serif; font-size: 18px; fill: #000; opacity: 1;">120</text></g><g class="mark-rule role-axis-domain" style="pointer-events: none;"><line transform="translate(0,200)" x2="0" y2="-200" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line></g><g class="mark-text role-axis-title" style="pointer-events: none;"><text text-anchor="middle" transform="translate(-55,100) rotate(-90) translate(0,-4)" style="font-family: sans-serif; font-size: 18px; font-weight: bold; fill: #000; opacity: 1;">regions</text></g></g></g></g></g></g></g></g></svg></p>
+</section>
+<section id="vendor-specificity" class="level1" data-bgcss="tw-bg-extra-light-blue" data-state="tw-bg-extra-light-blue">
+<h1>VENDOR SPECIFICITY</h1>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="446pt" height="432" version="1.1" viewBox="0 0 446 324">
+    <g id="surface210">
+        <path fill="#ef5ba1" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 8h234v96H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M5.926 5.464c63.443 4.995 127.539 1.895 172.208-.36M4.014 6.788c39.203.108 78.565.181 176.218-.08m-1.319-2.027c.6 14.12 3.108 32.162.173 74.69m.847-73.86c.087 16.036-.363 29.088-.12 73.742m2.173-1.752c-59.296-1.151-119.516.32-177.334.161m175.8.727c-62.298.34-121.703-.882-176.465-.061m.72-1.56c-1.317-23.147.166-51.255.725-69.562m-2.35 71.005c.408-26.736-.45-52.828 1.677-71.865"/>
+        <path fill="#f99c41" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 8h234v96h-234zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M206.212 6.794c37.684 4.245 74.318 5.894 171.583-1.776M203.241 6.381c41.107 2.127 79.269 2.985 177.012 1.52m.835.888c1.075 15.911-.712 34.919.064 71.66m-1.921-72.782c-.08 9.035.457 25.055.397 70.274m.314 2.775c-68.886-.765-138.72-1.62-177.044-.612m176.892-1.199c-43.087-.21-86.247 1.21-176.139-.27m-.68 2.297c2.292-27.105-.755-49.356 3.056-74.337m-1.101 71.895c-.243-24.868-.405-46.674-.29-71.075"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M94.5 136h315v96h-315zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M74.08 99.873c53.212-.855 107.355.292 234.234.076m-235.778-.126c93.378 2.549 188.104 2.238 236.862.592m-2.63.345c1.253 15.965 4.359 29.5.794 70.6m.055-71.156c.897 25.582 1.35 49.257.624 72.246m1.462.571c-63.686-2.677-130.573-2.593-238.477-2.979m236.681 1.424c-93.571.642-185.935-.607-236.068.407m-.867.937c-.159-26.314-.988-51.732-.355-73.14m1.998 72.88c-.812-20.558.797-37.436.533-72.379"/>
+        <path fill="#27bdce" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 264h234v96H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M2.34 197.233c49.146 1.104 94.2 3.015 176.972.286m-175.278-.58c62.297-2.463 126.876-.97 174.449-.325m-1.658 1.395c1.626 16.248 1.584 32.82 2.399 72.421m-.083-73.977c.048 20.04-.813 40.104.393 72.958m-1.473 1.184c-46.11-1.773-90.191-2.833-175.357-1.398m175.576.888c-39.808-.638-78.489-1.59-174.85-1.814m.889-.999c-3.264-12.996-1.199-30.706-.098-70.242m-.535 73.017c-1.038-19.137-.399-38.728-.929-72.059"/>
+        <path fill="#00aa5b" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 264h234v96h-234zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M202.82 197.906c41.402-4.327 80.308-2.915 179.26-1.603M205.457 199.2c61.029 3.163 120.621 3.015 174.243-.173m-1.052-2.632c2.737 18.856 2.192 42.15 1.325 74.681m-.935-73.66c.964 28.982 1.236 56.689.902 72.12m.615-.443c-41.976 2.554-83.443 4.386-176.159 3.073m175.87-1.749c-49.002.164-95.98.319-174.891.062m-2.927-1.21c1.515-20.306.938-39.733 1.691-72.943m1.233 74.817c-1.937-19.755-.662-38.493-1.313-73.786"/>
+    </g>
+    <defs xmlns="http://www.w3.org/2000/svg">
+        <filter id="dsFilterNoBlur" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feBlend in="SourceGraphic" in2="matrixOut" mode="normal"/>
+        </filter>
+        <filter id="dsFilter" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feGaussianBlur in="matrixOut" result="blurOut" stdDeviation="3"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+        </filter>
+        <marker id="iPointer-k64m7uwe8a" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M10 0v10L0 5z"/>
+        </marker>
+        <marker id="Pointer-k64m7uwe8a" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M0 0l10 5-10 5z"/>
+        </marker>
+    </defs>
+    <defs>
+        <style type="text/css">
+            @font-face{font-family:&quot;xkcd Script&quot;;src:url(./xkcd-script.ttf)}
+        </style>
+    </defs>
+    ??
+    <text id="text0" x="60.075" y="45.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Vault
+    </text>
+    <text id="text1" x="282.825" y="45.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        RDS
+    </text>
+    <text id="text2" x="154.575" y="141.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Kubernetes
+    </text>
+    <text id="text3" x="60.075" y="237.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Jenkins
+    </text>
+    <text id="text4" x="276.075" y="237.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        SQS
+    </text>
+    <text id="text5" x="127.575" y="297.6" fill="#000" font-family="xkcd Script" font-size="15">
+        Amazon Web Services
+    </text>
+</svg>
+</p>
+</section>
+<section id="cluster-state" class="level1" data-bgcss="tw-bg-extra-light-blue" data-state="tw-bg-extra-light-blue">
+<h1>CLUSTER STATE</h1>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="466pt" height="224" version="1.1" viewBox="0 0 466 168">
+    <g id="surface194">
+        <path fill="#ef5ba1" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 43.2h603v105.6H185.398L125.102 184v-35.2H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M5.926 31.863c166.638 8.572 333.93 5.476 448.958-.357M4.014 33.187c100.522-.556 201.205-.485 452.968-.078m-1.319-2.028c.686 12.976 3.196 32.608.173 81.89m.847-81.06c.108 17.053-.34 31.57-.12 80.944m2.173-1.752c-105.984-2.971-212.891-1.5-318.41.161m316.875.726c-110.898-1.535-218.906-2.76-317.537-.061m.718-1.559c-17.071 12.21-32.019 18.776-45.697 28.392m44.074-26.95c-15.305 7.845-33.064 17.42-44.748 26.088m.773 1.878c.847-8.806-.129-14.938-1.998-26.9m1.854 25.583c-1.488-7.43.03-13.108-1.73-26.738m2.855.408c-32.115 1.324-63.489-1.483-92.688.179m91.095-1.679c-34.058 1.69-67.667.404-91.187 1.245m1.237.281c.369-21.597.246-46.014-1.846-80.326m1.623 79.945c-1.21-18.885-.943-38.256-.117-78.645m-.34-.7c.015.268.58.03.938.355m-1.125-.407c.536.176.958.305 1.219.55"/>
+    </g>
+    <defs xmlns="http://www.w3.org/2000/svg">
+        <filter id="dsFilterNoBlur" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feBlend in="SourceGraphic" in2="matrixOut" mode="normal"/>
+        </filter>
+        <filter id="dsFilter" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feGaussianBlur in="matrixOut" result="blurOut" stdDeviation="3"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+        </filter>
+        <marker id="iPointer-opldokm75i" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M10 0v10L0 5z"/>
+        </marker>
+        <marker id="Pointer-opldokm75i" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M0 0l10 5-10 5z"/>
+        </marker>
+    </defs>
+    <defs>
+        <style type="text/css">
+            @font-face{font-family:&quot;xkcd Script&quot;;src:url(./xkcd-script.ttf)}
+        </style>
+    </defs>
+    ??
+    <text id="text0" x="33.075" y="69.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Stateless is Easy, Stateful is Hard.
+    </text>
+    <text id="text1" x="242.325" y="93.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        -
+    </text>
+    <text id="text2" x="255.825" y="93.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Brandon Philips (2016)
+    </text>
+</svg>
+</p>
+<div class="tiny">
+Source: <a href="https://coreos.com/blog/introducing-operators.html">coreos.com/blog/introducing-operators.html</a>
+</div>
+</section>
+<section id="operators" class="level1" data-bgcss="tw-bg-extra-light-blue" data-state="tw-bg-extra-light-blue">
+<h1>OPERATORS</h1>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="612" height="384" version="1.1" viewBox="0 0 459 288">
+    <g id="surface246">
+        <path fill="#ef5ba1" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 8h243v96H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M5.926 5.464c65.96 5.082 132.572 1.983 178.958-.36M4.014 6.788c40.696.093 81.557.166 182.968-.08m-1.319-2.027c.6 14.053 3.108 32.094.173 74.69m.847-73.86c.087 16.027-.363 29.079-.12 73.742m2.173-1.752c-61.532-1.151-123.984.32-184.084.161m182.55.727c-64.624.34-126.355-.882-183.215-.061m.72-1.56c-1.317-23.147.166-51.255.725-69.562m-2.35 71.005c.408-26.736-.45-52.828 1.677-71.865"/>
+        <path fill="#f99c41" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M301.5 8h234v96h-234zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M226.462 6.794c37.684 4.485 74.318 6.135 171.583-1.776M223.491 6.381c41.107 2.253 79.269 3.108 177.012 1.52m.835.888c1.075 15.981-.712 34.992.064 71.66m-1.921-72.782c-.08 8.774.457 24.794.397 70.274m.314 2.775c-68.886-.689-138.72-1.545-177.044-.612m176.892-1.199c-43.087-.164-86.247 1.257-176.139-.27m-.68 2.297c2.292-27.055-.755-49.303 3.056-74.337m-1.101 71.895c-.243-24.933-.405-46.738-.29-71.075M117.907 150.946c1.618 18.777 1.782 41.646 2.541 97.377m-1.356-97.593c2.499 20.965 2.792 41.218.94 97.698m-.232-.756c-1.777 11.57 41.034 16.548 89.127 17.37m-89.164-19.306c-2.4 14.332 43.359 18.9 89.08 19.975m0 0c52.186 1.854 94.895-8.048 91.151-18.13m-92.218 20.087c53.004-3.172 92.364-7.474 92.588-21.267m-1.023.674c1.5-20.634-.038-42.285 1.905-96.357m-1.832 95.411c.275-29.713-1.125-55.679.056-96.332m.893.203c.557-9.33-41.226-18.756-89.924-19.638m88.673 17.965c.586-8.575-42.065-16.278-88.717-17.91m0 0c-51.847 1.358-92.531 8.898-91.663 21.12m91.44-19.651c-51.163 2.173-93.541 7.948-93.204 19.813m-.302-.342c1.043-.76 1.86-.393 3.492.286m-3.26.176c.867 1.251 1.948 1.31 2.944-.228"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M118.89 151.348c1.751 11.874 40.13 16.286 89.472 17.57m-88.907-16.436c-2.068 11.314 38.443 17.19 90.484 17.97m0 0c51.108.551 91.415-8.094 90.468-18.185m-88.869 16.744c47.25.427 87.724-6.72 90.07-16.928M190.885 42.77c14.054-2.93 21.732-2.25 30.806-3.62m-29.605 1.142c10.219 2.481 17.21 3.02 27.826 1.778"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M205.538 42.09c-.726 19.463 1.837 33.8-.27 72.806m.276-72.149c-.894 20.303-.735 42.214-.841 71.444"/>
+    </g>
+    <defs xmlns="http://www.w3.org/2000/svg">
+        <filter id="dsFilterNoBlur" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feBlend in="SourceGraphic" in2="matrixOut" mode="normal"/>
+        </filter>
+        <filter id="dsFilter" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feGaussianBlur in="matrixOut" result="blurOut" stdDeviation="3"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+        </filter>
+        <marker id="iPointer-yva25x9qdki" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M10 0v10L0 5z"/>
+        </marker>
+        <marker id="Pointer-yva25x9qdki" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M0 0l10 5-10 5z"/>
+        </marker>
+    </defs>
+    <defs>
+        <style type="text/css">
+            @font-face{font-family:&quot;xkcd Script&quot;;src:url(./xkcd-script.ttf)}
+        </style>
+    </defs>
+    <g xmlns="http://www.w3.org/2000/svg" id="lines-yva25x9qdki" fill="none" stroke="#000" stroke-width="2" transform="scale(.75)">
+        <g id="group694">
+            <path id="path694" marker-end="url(#Pointer-yva25x9qdki)" marker-start="url(#iPointer-yva25x9qdki)" d="M256.5 56h36"/>
+        </g>
+        <g id="group742">
+            <path id="path742" marker-end="url(#Pointer-yva25x9qdki)" d="M274.5 56v96"/>
+        </g>
+    </g>
+    <text id="text0" x="6.075" y="45.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Custom Resource Definition
+    </text>
+    <text id="text2" x="19.575" y="57.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        (e.g. &quot;VaultService&quot;)
+    </text>
+    <text id="text1" x="282.825" y="45.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Controller
+    </text>
+    <text id="text3" x="235.575" y="57.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        (backup, upgrade, etc.)
+    </text>
+    <text id="text4" x="141.075" y="189.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Cluster state (etcd)
+    </text>
+    <text id="text5" x="141.075" y="201.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Persistent Volumes
+    </text>
+    <text id="text6" x="174.825" y="213.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        ConfigMaps
+    </text>
+    <text id="text7" x="188.325" y="225.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Secrets
+    </text>
+</svg>
+</p>
+</section>
+<section id="corporate-support" class="level1" data-bg="#fff44d" data-background="#fff44d">
+<h1>CORPORATE SUPPORT</h1>
+<p>Vault operator<br/>
+<img src="assets/img/CoreOS.svg" width="200px"/></p>
+<p>MySQL operator<br/>
+<img src="assets/img/Oracle_logo.svg" width="200px"/></p>
+<p>PostgreSQL operator<br/>
+<img src="assets/img/Zalando_logo.svg" width="200px"/></p>
+<p>etc.</p>
+</section>
+<section id="vendor-independence" class="level1" data-bgcss="tw-bg-extra-light-blue" data-state="tw-bg-extra-light-blue">
+<h1>VENDOR INDEPENDENCE</h1>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="446pt" height="480" version="1.1" viewBox="0 0 446 360">
+    <g id="surface270">
+        <path fill="#ef5ba1" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 24h234v96H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M5.926 17.464c63.443 4.995 127.539 1.895 172.208-.36M4.014 18.788c39.203.108 78.565.181 176.218-.08m-1.319-2.027c.6 14.12 3.108 32.162.173 74.69m.847-73.86c.087 16.036-.363 29.088-.12 73.742m2.173-1.752c-59.296-1.151-119.516.32-177.334.161m175.8.727c-62.298.34-121.703-.882-176.465-.061m.72-1.56c-1.317-23.147.166-51.255.725-69.562m-2.35 71.005c.408-26.736-.45-52.828 1.677-71.865"/>
+        <path fill="#f99c41" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 24h234v96h-234zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M206.212 18.794c37.684 4.245 74.318 5.895 171.583-1.776m-174.554 1.363c41.107 2.127 79.269 2.985 177.012 1.52m.835.888c1.075 15.912-.712 34.919.064 71.66m-1.921-72.782c-.08 9.035.456 25.055.397 70.274m.314 2.775c-68.886-.764-138.72-1.62-177.044-.612m176.892-1.199c-43.087-.21-86.247 1.21-176.139-.27m-.68 2.297c2.292-27.104-.755-49.356 3.056-74.337m-1.102 71.895c-.243-24.868-.404-46.673-.289-71.075"/>
+        <path fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M94.5 168h315v96h-315zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M74.08 123.873c53.212-.855 107.355.292 234.234.076m-235.778-.126c93.378 2.549 188.104 2.238 236.862.592m-2.63.345c1.253 15.965 4.359 29.5.794 70.6m.055-71.156c.897 25.582 1.35 49.257.624 72.246m1.462.571c-63.686-2.677-130.573-2.593-238.477-2.979m236.681 1.424c-93.571.642-185.935-.606-236.068.407m-.867.937c-.159-26.314-.988-51.732-.355-73.14m1.998 72.88c-.812-20.558.797-37.436.533-72.378"/>
+        <path fill="#27bdce" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M4.5 312h234v96H4.5zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M2.34 233.233c49.146 1.104 94.2 3.015 176.972.286m-175.278-.58c62.297-2.463 126.876-.97 174.449-.325m-1.658 1.395c1.626 16.248 1.584 32.82 2.399 72.421m-.083-73.977c.048 20.04-.813 40.104.393 72.958m-1.473 1.184c-46.11-1.773-90.191-2.833-175.357-1.398m175.576.888c-39.808-.638-78.489-1.59-174.85-1.814m.889-.999c-3.264-12.996-1.199-30.706-.098-70.242m-.535 73.017c-1.038-19.137-.399-38.728-.929-72.059"/>
+        <path fill="#00aa5b" fill-opacity="1" fill-rule="nonzero" stroke="none" d="M274.5 312h234v96h-234zm0 0" transform="scale(.75)"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M202.82 233.906c41.402-4.327 80.308-2.915 179.26-1.603M205.457 235.2c61.029 3.163 120.621 3.015 174.243-.173m-1.052-2.632c2.737 18.856 2.192 42.15 1.325 74.681m-.935-73.66c.964 28.982 1.236 56.689.902 72.12m.615-.443c-41.976 2.554-83.443 4.386-176.159 3.073m175.87-1.749c-49.002.164-95.98.319-174.891.062m-2.927-1.21c1.515-20.306.938-39.733 1.691-72.943m1.233 74.817c-1.937-19.755-.662-38.493-1.313-73.786M90.553 88.199c3.053 7.998.235 10.197-.11 24.512m1.23-23.607c.102 5.665-.402 12.052-1.252 24.74m.947 95.708c-.583 6.316-1.632 11.962.85 26.35m-2.69-25.043c1.975 8.756 1.913 18.772 1.667 23.07M288.896 89.196c-2.458 8.71-3.011 17.26-1.623 23.952m1.45-24.86c-2.097 6.093-.483 12.284-.588 24.292"/>
+        <path fill="none" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-opacity="1" stroke-width="1.5" d="M286.005 207.833c-.05 7.83-.098 19.927-.203 24.366m1.896-22.893c-1.069 5.455-1.304 14.508-.486 23.575"/>
+    </g>
+    <defs xmlns="http://www.w3.org/2000/svg">
+        <filter id="dsFilterNoBlur" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feBlend in="SourceGraphic" in2="matrixOut" mode="normal"/>
+        </filter>
+        <filter id="dsFilter" width="150%" height="150%">
+            <feOffset dx="3" dy="3" in="SourceGraphic" result="offOut"/>
+            <feColorMatrix in="offOut" result="matrixOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feGaussianBlur in="matrixOut" result="blurOut" stdDeviation="3"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+        </filter>
+        <marker id="iPointer-rdyl5zcg8dh" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M10 0v10L0 5z"/>
+        </marker>
+        <marker id="Pointer-rdyl5zcg8dh" fill="#000" markerHeight="7" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="5" refY="5" viewBox="0 0 10 10">
+            <path d="M0 0l10 5-10 5z"/>
+        </marker>
+    </defs>
+    <defs>
+        <style type="text/css">
+            @font-face{font-family:&quot;xkcd Script&quot;;src:url(./xkcd-script.ttf)}
+        </style>
+    </defs>
+    <g xmlns="http://www.w3.org/2000/svg" id="lines-rdyl5zcg8dh" fill="none" stroke="#000" stroke-width="2" transform="scale(.75)">
+        <g id="group425">
+            <path id="path425" marker-end="url(#Pointer-rdyl5zcg8dh)" d="M121.5 120v32"/>
+        </g>
+        <g id="group436">
+            <path id="path436" marker-start="url(#iPointer-rdyl5zcg8dh)" d="M121.5 280v32"/>
+        </g>
+        <g id="group1296">
+            <path id="path1296" marker-end="url(#Pointer-rdyl5zcg8dh)" d="M382.5 120v32"/>
+        </g>
+        <g id="group1307">
+            <path id="path1307" marker-start="url(#iPointer-rdyl5zcg8dh)" d="M382.5 280v32"/>
+        </g>
+    </g>
+    <text id="text0" x="39.825" y="57.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Vault operator
+    </text>
+    <text id="text1" x="242.325" y="57.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        MySQL operator
+    </text>
+    <text id="text2" x="154.575" y="165.6" fill="#000" stroke="none" font-family="xkcd Script" font-size="15">
+        Kubernetes
+    </text>
+    <text id="text3" x="26.325" y="273.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Jenkins X operator
+    </text>
+    <text id="text5" x="53.325" y="285.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        (Tekton)
+    </text>
+    <text id="text4" x="242.325" y="273.6" fill="#fff" stroke="none" font-family="xkcd Script" font-size="15">
+        Kafka operator
+    </text>
+    <text id="text6" x="39.825" y="333.6" fill="#000" font-family="xkcd Script" font-size="15">
+        Any cloud offering a managed Kubernetes service
+    </text>
+</svg>
+</p>
+</section>
+<section id="thank-you" class="level1 light-on-dark" data-bgcss="tw-colorful" data-state="tw-colorful">
+<h1><small>THANK YOU</small></h1>
+<p><small>Slides built with <a href="https://github.com/arnehilmann/markdeck">Markdeck</a><br/>
+<i class="fa fa-github" aria-hidden="true"></i> <a href="https://github.com/gerald1248/who-needs-users-slides">gerald1248/kubernetes-past-future-slides</a><br/>
+<i class="fa fa-twitter" aria-hidden="true"></i> 03spirit</small></p>
+</section>
+
+        </div>
+    </div>
+
+    <script src="assets/3rdparty/jquery.js"></script>
+
+    <script src="assets/3rdparty/reveal.js/lib/js/head.min.js"></script>
+    <script src="assets/3rdparty/reveal.js/js/reveal.js"></script>
+
+    <script>
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: '',
+            controlsTutorial: '',
+            controlsLayout: 'bottom-right',
+            controlsBackArrows: 'faded',
+            progress: 'true',
+            defaultTiming: '120',
+            slideNumber: 'true',
+            history: 'true',
+            keyboard: 'true',
+            overview: 'true',
+            center: 'true',
+            touch: 'true',
+            loop: '',
+            rtl: '',
+            shuffle: '',
+            fragments: 'true',
+            embedded: '',
+            help: 'true',
+            showNotes: '',
+            autoPlayMedia: 'null',
+
+            autoSlide: (window.pdf_render) ? 0 : 0,
+
+            autoSlideStoppable: 'true',
+            autoSlideMethod: 'Reveal.navigateNext',
+            mouseWheel: '',
+            hideAddressBar: 'true',
+            previewLinks: '',
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+
+            theme: 'simple',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: 'assets/3rdparty/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'assets/markdeck/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'assets/3rdparty/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: 'assets/3rdparty/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+    </script>
+
+            <script src="assets/3rdparty/asciinema-player.js"></script>
+    
+    <script src="assets/markdeck/revealjs-helper.js"></script>
+    <script>
+        flushleft(".slides .flushleft");
+    </script>
+
+
+</body>
+</html>
