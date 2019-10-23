@@ -34,48 +34,6 @@ asciinema: true
                             |
              #--------------#--------------#
              |                             |
-             v                             v
-#------------#------------.   #------------#------------.       
-|[p]                      |   |[p]                      |      
-| Pod                     |   | Pod                     |       
-|                         |   |                         |      
-#------------#------------.   #------------#------------#       
-|[w]         |[w]         |   |[w]         |[w]         |       
-| Container  | Container  |   | Container  | Container  |     
-|            |            |   |            |            |    
-#------------#------------#   #------------#------------#       
-|[w]                      |   |[w]                      |      
-| Host       #------------#   | Host       #------------#        
-|            |[g]kernel   |   |            |[g]kernel   |       
-'------------#------------#   '------------#------------#       
-                                                                 
-                                                                 
-                                                                  
-[c]: {"a2s:type": "cloud", "a2s:delref": true, "fill": "#fff", "fillStyle": "solid"}
-[w]: {"a2s:delref": true, "fill": "#fff", "fillStyle": "solid", "strokeStyle": "#000"}
-[g]: {"a2s:delref": true, "fill": "transparent", "fillStyle": "solid", "strokeStyle": "#000"}
-[p]: {"a2s:delref": true, "fill": "#ef5ba1", "fillStyle": "solid", "strokeStyle": "#000"}
-[o]: {"a2s:delref": true, "fill": "#f99c41", "fillStyle": "solid"}
-```
-
-# HIGHLY AVAILABLE DEPLOYMENT {bgcss=tw-bg-extra-light-blue}
-
-```render_a2sketch
-                      #------------#
-                      |[c]         |
-                      | Users      |
-                      |            |
-                      #-----#------#
-                            |
-                            v
-                      #-----#------#
-                      |[o]         |
-                      | Service    | service.namespace.svc.cluster.local
-                      |            |
-                      #-----#------#
-                            |
-             #--------------#--------------#
-             |                             |
              v              |              v
 #------------#------------.   #------------#------------.
 |[p]                      | | |[p]                      |
@@ -87,9 +45,9 @@ asciinema: true
 |            |            | | |            |            |
 #------------#------------#   #------------#------------#
 |[w]                      | | |[w]                      |
-| Host       #------------#   | Host       #------------#
-| [zone=a]   |[g]kernel   | | | [zone=b]   |[g]kernel   |        
-'------------#------------#   '------------#------------#
+| Host                    |   | Host                    |
+| [zone=a]                | | | [zone=b]                |        
+'-------------------------#   '-------------------------#
                             |
 Availability zone a           Availability zone b
                             |
@@ -100,6 +58,34 @@ Availability zone a           Availability zone b
 [p]: {"a2s:delref": true, "fill": "#ef5ba1", "fillStyle": "solid", "strokeStyle": "#000"}
 [o]: {"a2s:delref": true, "fill": "#f99c41", "fillStyle": "solid"}
 ```
+
+# CANARY DEPLOYMENT {bgcss=tw-bg-yellow}
+
+```render_a2sketch
+
+                      #------------#
+                      |[c]         |
+                      | Users      |
+                      |            |
+                      #-----#------#
+               95%          |           5%
+             #--------------#--------------#
+             |                             |
+             v                             v
+       #-----#------#                #-----#------#
+       |[p]         |                |[b]         |
+       | v1.0.0     |                | v1.0.1-beta|
+       |            |                |            |
+       #------------#                #------------#
+                             
+                             
+[c]: {"a2s:type": "cloud", "a2s:delref": true, "fill": "#fff", "fillStyle": "solid"}
+[w]: {"a2s:delref": true, "fill": "#fff", "fillStyle": "solid", "strokeStyle": "#000"}
+[g]: {"a2s:delref": true, "fill": "#ddd", "fillStyle": "solid", "strokeStyle": "#000"}
+[p]: {"a2s:delref": true, "fill": "#ef5ba1", "fillStyle": "solid", "strokeStyle": "#000"}
+[b]: {"a2s:delref": true, "fill": "#f99c41", "fillStyle": "solid", "strokeStyle": "#000"}
+```
+
 
 # ISOLATED DEPLOYMENT {bgcss=tw-bg-yellow}
 
@@ -186,7 +172,7 @@ Availability zone a           Availability zone b
 ```
 
 <aside class="notes" data-markdown>
-This position (there are platforms for end users and others for platform builders) is absolutely fine in a vibrant ecosystem of container schedulers. There's no doubt developers love Docker Swarm, for example.
+Here is a snapshot of the vibrant container scheduler ecosystem just a few short years ago. Note Docker Swarm (still a firm favourite with developers) and Fleet, a container scheduler written by the nascent CoreOS team.
 </aside>
 
 # SPLENDID ISOLATION {bgcss=tw-bg-extra-light-blue} 
@@ -212,10 +198,16 @@ This position (there are platforms for end users and others for platform builder
 ```
 
 <aside class="notes" data-markdown>
-However, that is not the ecosystem we have today. It seems odd to let Kubernetes displace all contenders only to say that it's for platform builders only.
+However, that is not the ecosystem we have today.
+
+Clearly being the only shark in the fishbowl has helped Kubernetes, but to maintain its position more has to be done.
 </aside>
 
 # THE HORCRUX ADVANTAGE {bgcss=tw-bg-purple .light-on-dark}
+
+<aside class="notes" data-markdown>
+He Who Must Not Be Named in J.K. Rowling's books has the rather ingenious idea of splitting his soul into many fragments. Each has to be destroyed to get the better of him. This mechanism is meant to make him invincible, and it does prove highly effective. He may not be invincible, but it does take two rather long books to defeat him.
+</aside>
 
 # VENDOR SHARDING {bgcss=tw-bg-extra-light-blue}
 
@@ -482,16 +474,16 @@ Tectonic->OpenShift : merges with (2019)
 [s]: {"a2s:type":"storage", "a2s:delref": true, "fill": "#ffffff"}
 ```
 
-# CORPORATE SUPPORT {bg=#fff44d}
+# SPONSORS {bg=#fff44d}
 
 Vault operator<br/>
-<img src="assets/img/CoreOS.svg" width="200px"/>
+<img src="assets/img/CoreOS.svg" width="180px"/>
 
 MySQL operator<br/>
-<img src="assets/img/Oracle_logo.svg" width="200px"/>
+<img src="assets/img/Oracle_logo.svg" width="180px"/>
 
 PostgreSQL operator<br/>
-<img src="assets/img/Zalando_logo.svg" width="200px"/>
+<img src="assets/img/Zalando_logo.svg" width="180px"/>
 
 etc.
 
@@ -535,7 +527,6 @@ etc.
 ```
 
 # <small>THANK YOU</small> {bgcss=tw-colorful .light-on-dark}
-
 <small>Slides built with <a href="https://github.com/arnehilmann/markdeck">Markdeck</a><br/>
-<i class="fa fa-github" aria-hidden="true"></i> <a href="https://github.com/gerald1248/who-needs-users-slides">gerald1248/kubernetes-past-future-slides</a><br/>
-<i class="fa fa-twitter" aria-hidden="true"></i> 03spirit</small>
+<i class="fa fa-github" aria-hidden="true" style="vertical-align: middle"></i> <a href="https://github.com/gerald1248/who-needs-users-slides">gerald1248/kubernetes-past-future-slides</a><br/>
+<i class="fa fa-twitter" aria-hidden="true" style="vertical-align: middle"></i> 03spirit</small>
